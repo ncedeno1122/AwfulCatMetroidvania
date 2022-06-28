@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "37dca90b336811ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "e9425f6d6acb7d3c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "DevLogs/June 28.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6519957e610ea18f",
+    "type": "split",
+    "children": [
+      {
+        "id": "3a07d8e9042bbdee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d988fd385bab58d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "4bdebae44016eda5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c28c0e0856e820e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "398bc4c7123032d6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bbb094a8778530ae",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "DevLogs/June 28.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "e9425f6d6acb7d3c",
+  "lastOpenFiles": [
+    "DevLogs/June 28.md"
+  ]
+}

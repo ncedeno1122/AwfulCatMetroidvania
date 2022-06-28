@@ -875,7 +875,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -958,10 +958,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.86975396
+    y: 0.22392638
+    width: 0.9261939
+    height: 1.1042944
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1241,7 +1241,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 17
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1901,7 +1901,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 14
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1911,7 +1911,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3331,7 +3331,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 12
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4218,24 +4218,24 @@ Tilemap:
     m_Data: {fileID: -885502258, guid: 9e5ccb6f05e6fd148a2447d3243f53ab, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 118841640, guid: 9e5ccb6f05e6fd148a2447d3243f53ab, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1516889650, guid: 9e5ccb6f05e6fd148a2447d3243f53ab, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1879313904, guid: 9e5ccb6f05e6fd148a2447d3243f53ab, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1981954310, guid: 9e5ccb6f05e6fd148a2447d3243f53ab, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -1334964683, guid: c4a4492c5ff7f364e9227f485e908944, type: 3}
   - m_RefCount: 11
     m_Data: {fileID: 1541019675, guid: c4a4492c5ff7f364e9227f485e908944, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1857530403, guid: 9e5ccb6f05e6fd148a2447d3243f53ab, type: 3}
+    m_Data: {fileID: -1981954310, guid: 9e5ccb6f05e6fd148a2447d3243f53ab, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: -311741281, guid: c4a4492c5ff7f364e9227f485e908944, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 2069807939, guid: c4a4492c5ff7f364e9227f485e908944, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1857530403, guid: 9e5ccb6f05e6fd148a2447d3243f53ab, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 295
     m_Data:
@@ -5706,7 +5706,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &1864555602
 TrailRenderer:
@@ -5861,7 +5861,7 @@ Transform:
   - {fileID: 774717443}
   - {fileID: 1686324541}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &6163553445257701984
 Rigidbody2D:
