@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/June 29.md",
+            "file": "DevLogs/July 5th.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/June 29.md",
+                "file": "DevLogs/July 5th.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "e9425f6d6acb7d3c",
   "lastOpenFiles": [
+    "DevLogs/July 5th.md",
     "DevLogs/June 29.md",
     "DevLogs/June 28.md",
     "Notes - Study/Ideas for Quests and Hints.md"
