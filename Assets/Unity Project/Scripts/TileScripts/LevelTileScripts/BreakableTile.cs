@@ -5,6 +5,7 @@ using UnityEngine;
 public class BreakableTile : LevelTileGOScript
 {
     private bool m_IsBroken = false;
+    private bool m_IsPlayerInBlock = false;
     private IEnumerator m_BreakAndRegenCRT;
 
     // + + + + | Functions | + + + + 
@@ -25,8 +26,13 @@ public class BreakableTile : LevelTileGOScript
         m_IsBroken = true;
         m_AllowProjectilesThrough = true;
 
-        yield return new WaitForSeconds(breakTime);
+        do
+        {
+            yield return new WaitForSeconds(breakTime);
+        }
+        while (m_IsPlayerInBlock);
 
+        // When the Player leaves the block
         InvokeRequestTileRestore(transform.position);
         m_IsBroken = false;
         m_AllowProjectilesThrough = false;
@@ -39,6 +45,25 @@ public class BreakableTile : LevelTileGOScript
         if (collision.CompareTag("Projectile"))
         {
             TryBreakAndRegenCRT();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (m_IsBroken)
+            {
+                m_IsPlayerInBlock = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            m_IsPlayerInBlock = false;
         }
     }
 }
