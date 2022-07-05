@@ -32,32 +32,43 @@ public class LevelTilemapManager : MonoBehaviour
     {
         for (int i = -7; i < 7; i++)
         {
-            DeletePhysEnviroTile(new Vector3Int(i, i, 0));
+            DeletePhysEnviroTileAt(new Vector3Int(i, i, 0));
         }
 
-        string deletedTileString = string.Empty;
-        foreach (Vector3Int position in m_DeletedPhysEnviroTiles.Keys)
+        for (int i = -2; i < 2; i++)
         {
-            deletedTileString += $"({position.ToString()}, {m_DeletedPhysEnviroTiles[position].ToString()})" + "\n";
+            RestorePhysEnviroTileAt(new Vector3Int(i, i, 0));
         }
-        Debug.Log("We have deleted tiles: " + deletedTileString);
     }
 
     // + + + + | Functions | + + + + 
 
-    private void DeletePhysEnviroTile(Vector3Int position)
+    private void DeletePhysEnviroTileAt(Vector3Int position)
     {
         var tileToDelete = m_PhysEnviroTilemap.GetTile(position);
 
         if (tileToDelete)
         {
-            Debug.Log($"Deleting {tileToDelete} at position {position}!");
             m_DeletedPhysEnviroTiles.Add(position, tileToDelete);
             m_PhysEnviroTilemap.SetTile(position, null);
+            //Debug.Log($"Deleted {tileToDelete} at position {position}!");
         }
         else
         {
             Debug.Log($"No Phys Tile found at {position}");
+        }
+    }
+
+    private bool IsDeletedPhysEnviroTileAt(Vector3Int position) => m_DeletedPhysEnviroTiles.ContainsKey(position);
+
+    private void RestorePhysEnviroTileAt(Vector3Int position)
+    {
+        if (IsDeletedPhysEnviroTileAt(position))
+        {
+            var tileToRestore = m_DeletedPhysEnviroTiles[position];
+            m_DeletedPhysEnviroTiles.Remove(position);
+            m_PhysEnviroTilemap.SetTile(position, tileToRestore);
+            //Debug.Log($"Restored {tileToRestore} at position {position}!");
         }
     }
 }

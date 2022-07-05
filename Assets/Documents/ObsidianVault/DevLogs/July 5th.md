@@ -41,3 +41,13 @@ The only thing is that I'm trying to figure out is how to RESTORE tiles after de
 
 This just in, after running some tests in Start(), this new DeletePhysEnviroTile seems to work so far, even if it is a bit of a mouthful. In any case, we can effectively remember what TileBase tile we're doing, which rocks! I'd have to test this on tiles that AREN'T RuleTiles.
 
+---
+
+Wouldn't it be cool to call some event or static function that occurs every time a LevelTile has its activation condition met, that simply sends over the position of the LevelTile on the Tilemap? That way, we need only check what Tile is at that position in the LevelTilemapManager and call the appropriate behavior from the LevelTilemapManager. But... Does this violate the Single Responsibility Principle?
+The scope of this script is to manage the LevelTiles and their interactions with the PhysEnviroTilemap.
+
+---
+
+Looks like the new RestorePhysEnviroTileAt function is working well after some testing, very nice! :D
+
+Now that I have tiles being deletable and restoreable, it's time to make a coroutine out of this.
