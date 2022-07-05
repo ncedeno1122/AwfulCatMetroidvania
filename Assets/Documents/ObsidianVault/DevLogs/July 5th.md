@@ -32,3 +32,12 @@ Second thing is, I need a LevelTilemapManager script to handle the wrangling of 
 
 These two things should allow me to mock up the basic behavior that I want. Let's do this.
 
+---
+
+I must confess that I am so, SO dangerously tempted to try and make some serializable formatting to create levels from. Images, JSON, or some other workflow that I could hook up, OOH I'm just so dangerously tempted to try something like that... But I suppose the editor is what that's for..... Sigh... It would be so cool though.
+
+In any case, I'm trying to think in terms of the Single Responsibility Principle as I design my LevelTilemapManager class.
+The only thing is that I'm trying to figure out is how to RESTORE tiles after deleting them. I can do this with a dictionary of deleted tiles for easy management and lookup, *but it suuure would be cool to reference another pre-loaded resource to determine what that tile should be*. It'd be inefficient though, so I'll have to stick to this approach.
+
+This just in, after running some tests in Start(), this new DeletePhysEnviroTile seems to work so far, even if it is a bit of a mouthful. In any case, we can effectively remember what TileBase tile we're doing, which rocks! I'd have to test this on tiles that AREN'T RuleTiles.
+
