@@ -30,15 +30,8 @@ public class LevelTilemapManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = -7; i < 7; i++)
-        {
-            DeletePhysEnviroTileAt(new Vector3Int(i, i, 0));
-        }
-
-        for (int i = -2; i < 2; i++)
-        {
-            RestorePhysEnviroTileAt(new Vector3Int(i, i, 0));
-        }
+        LevelTileGOScript.RequestTileDelete += HandleRequestTileDelete;
+        LevelTileGOScript.RequestTileRestore += HandleRequestTileRestore;
     }
 
     // + + + + | Functions | + + + + 
@@ -71,4 +64,21 @@ public class LevelTilemapManager : MonoBehaviour
             //Debug.Log($"Restored {tileToRestore} at position {position}!");
         }
     }
+
+    // + + + + | Event Handling | + + + + 
+
+    private void HandleRequestTileDelete(Vector3 worldPosition)
+    {
+        var tilemapPosition = m_PhysEnviroTilemap.WorldToCell(worldPosition);
+        Debug.Log($"Received request to DELETE tile at {worldPosition} -> {tilemapPosition}!");
+        DeletePhysEnviroTileAt(tilemapPosition);
+    }
+
+    private void HandleRequestTileRestore(Vector3 worldPosition)
+    {
+        var tilemapPosition = m_PhysEnviroTilemap.WorldToCell(worldPosition);
+        Debug.Log($"Received request to RESTORE tile at {worldPosition} -> {tilemapPosition}!");
+        RestorePhysEnviroTileAt(tilemapPosition);
+    }
+
 }

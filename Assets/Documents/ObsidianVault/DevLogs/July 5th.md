@@ -51,3 +51,10 @@ The scope of this script is to manage the LevelTiles and their interactions with
 Looks like the new RestorePhysEnviroTileAt function is working well after some testing, very nice! :D
 
 Now that I have tiles being deletable and restoreable, it's time to make a coroutine out of this.
+
+BUT WAIT, I **shouldn't** put this coroutine in the LevelTilemap. I instead want to do any coroutine-specific thing in the LevelTilemapManager, but in the specific tiles themselves. Instead I will just want to notify the manager script via an event or something what I need from it.
+
+With that, I suppose, I need to actually implement these events. Now, Unity or C# events...
+C# Events it is :D!
+
+Now, let's see what I need to make. I need to make the RuleTile that holds the GameObject on it, and THEN I need to make the script for that GameObjectInstance.

@@ -28,9 +28,16 @@ public class FiredProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("LevelTileGO"))
         {
             Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("LevelTileGO"))
+        {
+            var tileScript = collision.gameObject.GetComponent<LevelTileGOScript>();
+            tileScript.TriggerTileEffect();
+            if (!tileScript.AllowProjectilesThrough)
+                Destroy(gameObject);
         }
     }
 }
