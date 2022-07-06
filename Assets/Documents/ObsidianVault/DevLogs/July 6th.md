@@ -26,3 +26,11 @@ The QUESTION is, what behavior will ALL LevelTiles have? What behavior will go i
 
 Ahhh, but wait! As it is right now, I don't listen for trigger collision to start my events within my BreakableTile script, it happens in my Projectile... I was deliberating over whether this was the right move when I made that decision too.
 If I were to change that, then that aligns with my idea of the script right now.
+
+ATTENTION, ATTENTION! A VIOLATION OF THE SINGLE RESPONSIBILITY PRINCIPLE HAS BEEN SPOTTED! ***neutralize the threat.***
+
+---
+
+Thinking as well about my `LevelTileGOScript`, it's really more of a class that could be static if it wanted to... The events are static, which is cool with ensuring there are only ONE of them that ever exist...
+
+But other Tiles that might be cool to have are like switches and things that we can Interact with..

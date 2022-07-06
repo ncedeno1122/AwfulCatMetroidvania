@@ -32,12 +32,12 @@ public class FiredProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("LevelTileGO"))
-        {
-            var tileScript = collision.gameObject.GetComponent<LevelTileGOScript>();
-            tileScript.TriggerTileEffect();
-            if (!tileScript.AllowProjectilesThrough)
-                Destroy(gameObject);
-        }
+        //else if (collision.gameObject.CompareTag("LevelTileGO"))
+        //{
+        //    var tileScript = collision.gameObject.GetComponent<LevelTileGOScript>();
+        //    tileScript.TriggerTileEffect();
+        //    if (!tileScript.AllowProjectilesThrough)
+        //        Destroy(gameObject);
+        //}
     }
 }

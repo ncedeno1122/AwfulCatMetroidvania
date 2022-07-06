@@ -51,7 +51,15 @@ public class BreakableTile : LevelTileGOScript
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //
+        if (collision.CompareTag("Projectile"))
+        {
+            TriggerTileEffect();
+
+            if (!m_AllowProjectilesThrough)
+            {
+                Destroy(collision.gameObject);
+            }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
