@@ -8,6 +8,13 @@ public class BreakableTile : LevelTileGOScript
     private bool m_IsPlayerInBlock = false;
     private IEnumerator m_BreakAndRegenCRT;
 
+    private ParticleSystem m_Particle;
+
+    private void Awake()
+    {
+        m_Particle = transform.GetChild(0).GetComponent<ParticleSystem>();
+    }
+
     // + + + + | Functions | + + + + 
 
     public override void TriggerTileEffect()=>TryBreakAndRegenCRT();
@@ -15,7 +22,7 @@ public class BreakableTile : LevelTileGOScript
     private void TryBreakAndRegenCRT()
     {
         if (m_IsBroken) return;
-        Debug.Log("Triggered! -> TryingToBreakAndRegen!");
+        //Debug.Log("Triggered! -> TryingToBreakAndRegen!");
         m_BreakAndRegenCRT = BreakAndRegenCRT(2f);
         StartCoroutine(m_BreakAndRegenCRT);
     }
@@ -25,6 +32,7 @@ public class BreakableTile : LevelTileGOScript
         InvokeRequestTileDelete(transform.position);
         m_IsBroken = true;
         m_AllowProjectilesThrough = true;
+        m_Particle.Play();
 
         do
         {
@@ -36,16 +44,14 @@ public class BreakableTile : LevelTileGOScript
         InvokeRequestTileRestore(transform.position);
         m_IsBroken = false;
         m_AllowProjectilesThrough = false;
+        m_Particle.Stop();
     }
 
     // + + + + | Collision Handling | + + + +
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Projectile"))
-        {
-            TryBreakAndRegenCRT();
-        }
+        //
     }
 
     private void OnTriggerStay2D(Collider2D collision)

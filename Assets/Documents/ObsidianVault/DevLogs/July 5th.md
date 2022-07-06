@@ -58,3 +58,7 @@ With that, I suppose, I need to actually implement these events. Now, Unity or C
 C# Events it is :D!
 
 Now, let's see what I need to make. I need to make the RuleTile that holds the GameObject on it, and THEN I need to make the script for that GameObjectInstance.
+
+---
+
+Well, I got it mostly working minus some extremely minute testing.
