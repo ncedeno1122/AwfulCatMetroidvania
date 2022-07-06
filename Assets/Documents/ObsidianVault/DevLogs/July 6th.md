@@ -33,4 +33,16 @@ ATTENTION, ATTENTION! A VIOLATION OF THE SINGLE RESPONSIBILITY PRINCIPLE HAS BEE
 
 Thinking as well about my `LevelTileGOScript`, it's really more of a class that could be static if it wanted to... The events are static, which is cool with ensuring there are only ONE of them that ever exist...
 
-But other Tiles that might be cool to have are like switches and things that we can Interact with..
+But other Tiles that might be cool to have are like switches and things that we can Interact with.. Those tiles might follow a different behavior.
+
+AHA! I think I've gotten it! What we might be missing here are interfaces! What if I wanted to mix and match some of the Tile properties later on? This might not be the BEST idea or something though, so I should probably just not do that...
+
+How's about this though? I can add a field to my `BreakableTile` script that is for the tags we want to break for, and set that elsewhere...  But that's something I'd want to pull up or make abstract for subclasses...
+
+GAH, I'm overthinking this now. I'm just going to copy and paste and do my thing. I'm being foolish. There are solutions, but I can't predict the future. Let's get it in ther and see what needs to be done.
+
+---
+
+What I think could be a good approach is to have this `BreakableTile` class describe some generic behavior that all `BreakableTiles` have, but have some other class actually listen for collision and handle stuff for specific implementations of that stuff. Essentially, having the BreakableTile class as a utility script on the GameObject or a module for handling that common behavior. I'm not quite sure though... There is a LOT of duplication with the "new" FallThroughTile code. All that's really different is the method in which we activate the trigger the whole song and dance with the block disappearing and reappearing.
+
+Ok, I've gotten it working now. Fairly easy, as expected. However, I'm still not over the duplication. They say if it ain't broke don't fix it, but I'm not sure. The problem is that it's all a design-level thing. I don't know exactly how many LevelTiles I want to implement, or their shared properties or anything. Because I've winged it in that aspect, I odn't know how to design my system. It's a decent system as it is, but not an elegant one. I should hash that out next.
