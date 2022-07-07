@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallThroughTile : LevelTileGOScript
+[RequireComponent(typeof(BreakableTile))]
+public class FallThroughTile : MonoBehaviour
 {
-    private bool m_IsBroken = false;
-    private bool m_IsPlayerInBlock = false;
     private float m_SpriteWidthWorld;
     private float m_SpriteHeightWorld;
-    private IEnumerator m_BreakAndRegenCRT;
 
-    private ParticleSystem m_Particle;
+    private BreakableTile m_BreakableTile;
     private SpriteRenderer m_SpriteRenderer;
+    private Collider2D m_Collider2D;
 
     private void Awake()
     {
-        m_Particle = transform.GetChild(0).GetComponent<ParticleSystem>();
+        m_BreakableTile = GetComponent<BreakableTile>();
+        m_Collider2D = GetComponent<Collider2D>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_SpriteWidthWorld = m_SpriteRenderer.sprite.texture.width * m_SpriteRenderer.sprite.pixelsPerUnit;
         m_SpriteHeightWorld = m_SpriteRenderer.sprite.texture.height * m_SpriteRenderer.sprite.pixelsPerUnit;
@@ -23,52 +23,28 @@ public class FallThroughTile : LevelTileGOScript
 
     // + + + + | Functions | + + + + 
 
-    public override void TriggerTileEffect() => TryBreakAndRegenCRT();
-
-    private void TryBreakAndRegenCRT()
-    {
-        if (m_IsBroken) return;
-        //Debug.Log("Triggered! -> TryingToBreakAndRegen!");
-        m_BreakAndRegenCRT = BreakAndRegenCRT(2f);
-        StartCoroutine(m_BreakAndRegenCRT);
-    }
-
-    private IEnumerator BreakAndRegenCRT(float breakTime)
-    {
-        InvokeRequestTileDelete(transform.position);
-        m_IsBroken = true;
-        m_AllowProjectilesThrough = true;
-        m_Particle.Play();
-
-        do
-        {
-            yield return new WaitForSeconds(breakTime);
-        }
-        while (m_IsPlayerInBlock);
-
-        // When the Player leaves the block
-        InvokeRequestTileRestore(transform.position);
-        m_IsBroken = false;
-        m_AllowProjectilesThrough = false;
-        m_Particle.Stop();
-    }
-
     private bool IsPositionAboveTile(Vector3 collisionPosition)
     {
-        return collisionPosition.y >= transform.position.y &&
-               (collisionPosition.x >= transform.position.x - m_SpriteWidthWorld / 2 &&
-               collisionPosition.x <= transform.position.x + m_SpriteWidthWorld / 2);
+        var closestPt = m_Collider2D.ClosestPoint(new Vector2(collisionPosition.x, collisionPosition.y));
+        var difference = closestPt - new Vector2(transform.position.x, transform.position.y);
+
+        return difference.x > -0.475f && difference.x < 0.475f &&
+               difference.y >= 0.5f;
+        
     }
 
     // + + + + | Collision Handling | + + + +
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && IsPositionAboveTile(collision.transform.position)) // TODO: Check within X range?
+        if (collision.CompareTag("Player"))
         {
-            TriggerTileEffect();
+            if (!m_BreakableTile.IsBroken && IsPositionAboveTile(collision.transform.position))
+            {
+                m_BreakableTile.TriggerTileEffect();
+            }
         }
-        else if (collision.CompareTag("Projectile") && !m_AllowProjectilesThrough)
+        else if (collision.CompareTag("Projectile") && !m_BreakableTile.AllowProjectilesThrough)
         {
             Destroy(collision.gameObject);
         }
@@ -78,25 +54,10 @@ public class FallThroughTile : LevelTileGOScript
     {
         if (collision.CompareTag("Player"))
         {
-            if (m_IsBroken)
+            if (!m_BreakableTile.IsBroken && IsPositionAboveTile(collision.transform.position))
             {
-                m_IsPlayerInBlock = true;
+                m_BreakableTile.TriggerTileEffect();
             }
-            else
-            {
-                if (IsPositionAboveTile(collision.transform.position))
-                {
-                    TriggerTileEffect();
-                }
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            m_IsPlayerInBlock = false;
         }
     }
 }

@@ -1,3 +1,4 @@
+Continuing on from [[July 5th]].
 Oh boy, I wonder what kind of cool special LevelTile I'll work on now :D.
 
 I'm satisfied as it stands so far with the breakable blocks, I'm a fan. But what's next? Perhaps we can try for the fall-through blocks today. This should be a fairly simple implementation, let's give it a try.
@@ -86,3 +87,8 @@ I think what's going on here is me finding a decent use case for a component-pat
 
 Initially, my only question was about what exactly happens to the coroutine to not restore the Breakable tile while the player is inside of it, but I suppose we can keep that in the BreakableTile component class.
 
+GEEZ I just heated up some soup and ate it with some Inca Kola all late at 2:30 am. Would recommend, that TOTALLY hit the spot. In any case,
+
+I refactored BreakOnProjectile to BreakOnTag, with a List of tags to break for. This allows for some fun flexibility for how certain Tiles break and all that stuff.
+
+Now it's time to approach the Fall-through blocks with this component-based logic.
