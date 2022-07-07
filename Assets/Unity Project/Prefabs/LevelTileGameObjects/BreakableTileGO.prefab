@@ -4940,6 +4940,7 @@ GameObject:
   - component: {fileID: 6355445577534872090}
   - component: {fileID: 6355445577534872091}
   - component: {fileID: 4695620716444889032}
+  - component: {fileID: 1021964078353790018}
   m_Layer: 0
   m_Name: BreakableTileGO
   m_TagString: LevelTileGO
@@ -5051,5 +5052,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f4525197d3740642afaaea6cf80fc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1021964078353790018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6355445577534872092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb08d177eeba74fbda5ba4ae1c837794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
