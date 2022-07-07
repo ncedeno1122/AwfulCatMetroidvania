@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class BreakableTile : LevelTileGOScript
 {
+    public const float SECONDS_TO_RESTORE = 2f;
+
     private bool m_IsBroken = false;
+    public bool IsBroken { get => m_IsBroken; }
+
     private bool m_IsPlayerInBlock = false;
+    public bool IsPlayerInBlock { get => m_IsPlayerInBlock; }
     private IEnumerator m_BreakAndRegenCRT;
 
     private ParticleSystem m_Particle;
@@ -22,8 +27,7 @@ public class BreakableTile : LevelTileGOScript
     private void TryBreakAndRegenCRT()
     {
         if (m_IsBroken) return;
-        //Debug.Log("Triggered! -> TryingToBreakAndRegen!");
-        m_BreakAndRegenCRT = BreakAndRegenCRT(2f);
+        m_BreakAndRegenCRT = BreakAndRegenCRT(SECONDS_TO_RESTORE);
         StartCoroutine(m_BreakAndRegenCRT);
     }
 
@@ -48,11 +52,6 @@ public class BreakableTile : LevelTileGOScript
     }
 
     // + + + + | Collision Handling | + + + +
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //
-    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {

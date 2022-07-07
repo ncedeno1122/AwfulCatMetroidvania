@@ -4939,10 +4939,10 @@ GameObject:
   - component: {fileID: 6355445577534872089}
   - component: {fileID: 6355445577534872090}
   - component: {fileID: 6355445577534872091}
-  - component: {fileID: 4695620716444889032}
-  - component: {fileID: 3156138625973184680}
+  - component: {fileID: 3803243249547720514}
+  - component: {fileID: 3285835181588936951}
   m_Layer: 0
-  m_Name: BreakableTileGO
+  m_Name: FallThroughTileGO
   m_TagString: LevelTileGO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5006,7 +5006,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.08627451}
+  m_Color: {r: 0.03003788, g: 0, b: 1, a: 0.08627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5041,8 +5041,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0.025
---- !u!114 &4695620716444889032
+  m_EdgeRadius: 0
+--- !u!114 &3803243249547720514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5054,7 +5054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4525197d3740642afaaea6cf80fc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3156138625973184680
+--- !u!114 &3285835181588936951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5063,8 +5063,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6355445577534872092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb08d177eeba74fbda5ba4ae1c837794, type: 3}
+  m_Script: {fileID: 11500000, guid: 0457716e30e733f44b883a7feb0529df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TagsToBreakFor:
-  - Projectile
