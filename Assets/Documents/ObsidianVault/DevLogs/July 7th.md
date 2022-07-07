@@ -50,3 +50,9 @@ In hindsight, my PlayerController knowing about InteractableTileScripts and all 
 Yippee! Now I've got my ToggleInteractableTile working after some testing, with a working status and everything.
 
 However, I've implemented it all in one script. In order to make it a component like BreakableTile, I need to make a triggerscript that triggers this tile.
+
+BOOM BABY I've just completed two poorly-named scripts, InteractToggleSwitch and InteractNontoggleButton, that satiate both cases of whether the InteractableTile is a toggle or not. And the best thing is, it seems to work!
+
+There is just one thing though, that the OnTriggerStay function calls more frequently for colliders that are MOVING within the trigger, so it's leading to infrequent multiple calls of the TriggerTileEffect() thing. It's not a major problem as staying still and PRESSING interact works fine, but staying still and HOLDING is a bit patchy at the moment.
+
+
