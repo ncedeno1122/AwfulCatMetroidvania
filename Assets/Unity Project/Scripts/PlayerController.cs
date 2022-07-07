@@ -28,10 +28,11 @@ public class PlayerController : MonoBehaviour
     public GameObject m_ProjectilePrefab;
     private Transform m_ProjectileSpawn;
     private PlayerInput m_PlayerInput;
-    private InputAction m_MoveAction, m_JumpAction, m_FireAction;
+    private InputAction m_MoveAction, m_JumpAction, m_FireAction, m_InteractAction;
     private Rigidbody2D m_rb2d;
     private Animator m_Animator;
     private SpriteRenderer m_SpriteRenderer;
+    private InteractableTile m_TouchingInteractableTile;
 
     private void Awake()
     {
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
         m_MoveAction = m_PlayerInput.actions["Move"];
         m_JumpAction = m_PlayerInput.actions["Jump"];
         m_FireAction = m_PlayerInput.actions["Fire"];
+        m_InteractAction = m_PlayerInput.actions["Interact"];
 
         m_rb2d = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
@@ -154,6 +156,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnInteract(InputAction.CallbackContext ctx)
+    {
+        if (m_InteractAction.WasPressedThisFrame())
+        {
+            if (m_TouchingInteractableTile)
+            {
+                m_TouchingInteractableTile.TriggerTileEffect();
+            }
+        }
+    }
+
     // + + + + | Functions | + + + + 
 
     private void HandleJumpInput()
@@ -238,6 +251,16 @@ public class PlayerController : MonoBehaviour
         //    m_IsGrounded = true;
         //    m_Animator.SetBool("IsGrounded", true);
         //}
+
+        if (collision.collider.isTrigger)
+        {
+            // TODO: Is this an InteractableTile?
+            var interactableTileScript = collision.gameObject.GetComponent<InteractableTile>();
+            if (interactableTileScript != null)
+            {
+                m_TouchingInteractableTile = interactableTileScript;
+            }
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -245,12 +268,21 @@ public class PlayerController : MonoBehaviour
         //
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         //if (collision.collider.CompareTag("PhysEnviro") && collision.transform.position.y < transform.position.y)
         //{
         //    m_IsGrounded = false;
         //    m_Animator.SetBool("IsGrounded", false);
         //}
+
+        if (collision.collider.isTrigger)
+        {
+            var interactableTileScript = collision.gameObject.GetComponent<InteractableTile>();
+            if (m_TouchingInteractableTile && m_TouchingInteractableTile.Equals(interactableTileScript))
+            {
+                m_TouchingInteractableTile = null;
+            }
+        }
     }
 }

@@ -32,6 +32,7 @@ public class LevelTilemapManager : MonoBehaviour
     {
         LevelTileGOScript.RequestTileDelete += HandleRequestTileDelete;
         LevelTileGOScript.RequestTileRestore += HandleRequestTileRestore;
+        LevelTileGOScript.RequestTileInteract += HandleRequestTileInteract;
     }
 
     // + + + + | Functions | + + + + 
@@ -79,6 +80,13 @@ public class LevelTilemapManager : MonoBehaviour
         var tilemapPosition = m_PhysEnviroTilemap.WorldToCell(worldPosition);
         Debug.Log($"Received request to RESTORE tile at {worldPosition} -> {tilemapPosition}!");
         RestorePhysEnviroTileAt(tilemapPosition);
+    }
+
+    private void HandleRequestTileInteract(Vector3 worldPosition, bool isToggled)
+    {
+        var tileMapPosition = m_LevelTileTilemap.WorldToCell(worldPosition);
+        Debug.Log($"Received request to INTERACT with tile at {worldPosition} -> {tileMapPosition}. Toggled: {isToggled}.");
+        // TODO: IMPLEMENT INTERACTION ACTIONS somehow
     }
 
 }
