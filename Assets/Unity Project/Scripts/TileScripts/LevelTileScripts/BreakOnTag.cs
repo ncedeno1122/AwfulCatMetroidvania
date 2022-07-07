@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BreakableTile))]
-public class BreakOnProjectile : MonoBehaviour
+public class BreakOnTag : MonoBehaviour
 {
+    public List<string> TagsToBreakFor;
+
     private BreakableTile m_BreakableTile;
 
     private void Awake()
@@ -14,13 +16,11 @@ public class BreakOnProjectile : MonoBehaviour
 
     // + + + + | Functions | + + + +
 
-
-
     // + + + + | Collision Handling | + + + +
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Projectile"))
+        if (TagsToBreakFor.Contains(collision.tag))
         {
             if (!m_BreakableTile.IsBroken)
             {
