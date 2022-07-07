@@ -15,7 +15,7 @@ public abstract class LevelTileGOScript : MonoBehaviour
     public delegate void RestoreTileAction(Vector3 worldPosition);
     public static event RestoreTileAction RequestTileRestore;
 
-    public delegate void InteractTileAction(Vector3 worldPosition, bool isToggled);
+    public delegate void InteractTileAction(Vector3 worldPosition, bool isAToggle, bool isToggled);
     public static event InteractTileAction RequestTileInteract;
 
     // + + + + | Functions | + + + + 
@@ -31,8 +31,8 @@ public abstract class LevelTileGOScript : MonoBehaviour
         RequestTileRestore(worldPosition);
     }
 
-    protected void InvokeRequestTileInteract(Vector3 worldPosition, bool isToggled)
+    protected void InvokeRequestTileInteract(Vector3 worldPosition, bool isAToggle, bool isToggled)
     {
-        RequestTileInteract(worldPosition, isToggled);
+        RequestTileInteract(worldPosition, isAToggle, isToggled);
     }
 }

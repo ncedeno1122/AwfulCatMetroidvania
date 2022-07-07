@@ -82,10 +82,18 @@ public class LevelTilemapManager : MonoBehaviour
         RestorePhysEnviroTileAt(tilemapPosition);
     }
 
-    private void HandleRequestTileInteract(Vector3 worldPosition, bool isToggled)
+    private void HandleRequestTileInteract(Vector3 worldPosition, bool isAToggle, bool isToggled)
     {
         var tileMapPosition = m_LevelTileTilemap.WorldToCell(worldPosition);
-        Debug.Log($"Received request to INTERACT with tile at {worldPosition} -> {tileMapPosition}. Toggled: {isToggled}.");
+
+        if (isAToggle)
+        {
+            Debug.Log($"Received toggle interaction request at {worldPosition} -> {tileMapPosition}. Toggled: {isToggled}.");
+        }
+        else
+        {
+            Debug.Log($"Received non-toggle interaction request at {worldPosition} -> {tileMapPosition}!");
+        }
         // TODO: IMPLEMENT INTERACTION ACTIONS somehow
     }
 

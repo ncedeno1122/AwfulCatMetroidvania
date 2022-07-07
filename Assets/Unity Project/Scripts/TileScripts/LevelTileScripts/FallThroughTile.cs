@@ -28,9 +28,7 @@ public class FallThroughTile : MonoBehaviour
         var closestPt = m_Collider2D.ClosestPoint(new Vector2(collisionPosition.x, collisionPosition.y));
         var difference = closestPt - new Vector2(transform.position.x, transform.position.y);
 
-        return difference.x > -0.475f && difference.x < 0.475f &&
-               difference.y >= 0.5f;
-        
+        return difference.x > -0.475f && difference.x < 0.475f && difference.y >= 0.5f;
     }
     
     // + + + + | Collision Handling | + + + +
