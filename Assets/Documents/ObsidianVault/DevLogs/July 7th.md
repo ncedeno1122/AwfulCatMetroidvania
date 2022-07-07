@@ -28,3 +28,25 @@ They would both have about the same conditions provided I did them in some norma
 
 ---
 
+Ok I'd run into an issue where my PlayerController with the Rigidbody Collider needed to detect a static trigger collider. Looking it up (https://docs.unity3d.com/Manual/CollidersOverview.html), I don't think that interaction can happen. I may have to add a TriggerCollider to my Player OR see some other way to use the Tile's collision to detect whether the **interaction input** has been done.
+
+Adding another trigger collider to my Player GameObject is certainly a solution, but it feels immoral for some reason.
+
+IF I were to add an IsInteracting field to the PlayerController, like IsGrounded or something, I'd be able to see exactly what it is that I'm doing, AND be able to check from the Tiles...
+This seems like the best approach. As said in the Mandalorian, "This is the way."
+
+##### Yummy Delicious Components
+Good god do I really want to try and break my PlayerController script into various components, but I'm not sure it'd have any direct benefits... Currently, I'm "following" the SRP because it is indeed a script that controls the player, but perhaps things like interaction and firing deserve their own scripts and homes to be used elsewhere... But what do I know?
+I'm sure I'll regret that later LOL, when I start making enemies I might want to have shoot or interact or something like that...
+
+At least, it should be fairly easy to implement! ;)
+
+---
+
+In hindsight, my PlayerController knowing about InteractableTileScripts and all that was bad design, because it violates the SRP. I'm controlling the Player, not interacting with tiles... I'm glad I know that now!
+
+---
+
+Yippee! Now I've got my ToggleInteractableTile working after some testing, with a working status and everything.
+
+However, I've implemented it all in one script. In order to make it a component like BreakableTile, I need to make a triggerscript that triggers this tile.

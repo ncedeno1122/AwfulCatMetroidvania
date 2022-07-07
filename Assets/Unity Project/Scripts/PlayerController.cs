@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
     private bool m_IsFalling = false;
     public int m_NumberJumps = 2;
 
+    [SerializeField]
+    private bool m_IsInteracting;
+    public bool IsInteracting { get => m_IsInteracting; }
+
     private float m_AimTimer = 0f;
     [Range(0.2f, 2f)]
     private float AIMING_COOLDOWN_TIME = 1f;
@@ -32,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_rb2d;
     private Animator m_Animator;
     private SpriteRenderer m_SpriteRenderer;
+    [SerializeReference]
     private InteractableTile m_TouchingInteractableTile;
 
     private void Awake()
@@ -160,10 +165,11 @@ public class PlayerController : MonoBehaviour
     {
         if (m_InteractAction.WasPressedThisFrame())
         {
-            if (m_TouchingInteractableTile)
-            {
-                m_TouchingInteractableTile.TriggerTileEffect();
-            }
+            m_IsInteracting = true;
+        }
+        if (m_InteractAction.WasReleasedThisFrame())
+        {
+            m_IsInteracting = false;
         }
     }
 
@@ -251,16 +257,6 @@ public class PlayerController : MonoBehaviour
         //    m_IsGrounded = true;
         //    m_Animator.SetBool("IsGrounded", true);
         //}
-
-        if (collision.collider.isTrigger)
-        {
-            // TODO: Is this an InteractableTile?
-            var interactableTileScript = collision.gameObject.GetComponent<InteractableTile>();
-            if (interactableTileScript != null)
-            {
-                m_TouchingInteractableTile = interactableTileScript;
-            }
-        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -275,14 +271,5 @@ public class PlayerController : MonoBehaviour
         //    m_IsGrounded = false;
         //    m_Animator.SetBool("IsGrounded", false);
         //}
-
-        if (collision.collider.isTrigger)
-        {
-            var interactableTileScript = collision.gameObject.GetComponent<InteractableTile>();
-            if (m_TouchingInteractableTile && m_TouchingInteractableTile.Equals(interactableTileScript))
-            {
-                m_TouchingInteractableTile = null;
-            }
-        }
     }
 }

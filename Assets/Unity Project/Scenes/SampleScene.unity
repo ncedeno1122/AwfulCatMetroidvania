@@ -980,6 +980,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 1
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 1, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 2
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 3, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -1030,19 +1040,33 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 1
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 5, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 2
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 6645cdfbd4ee23e469ac27d51357c97f, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: c37ede629e021114487f5ad71385c220, type: 2}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 6d3803bc856d247e9b1fccf6c529f82b, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 3
     m_Data: {fileID: -119639929, guid: b5f749eb1d84a6543a43a58db6f09780, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 776975238, guid: fdf1c3ccc3e35604d8d55b58d3cc85b1, type: 3}
+  - m_RefCount: 2
+    m_Data: {fileID: 859594215, guid: eb5c409c250f8054696f20cf98ae8833, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 6
+  - m_RefCount: 8
     m_Data:
       e00: 1
       e01: 0
@@ -1061,13 +1085,15 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 6
+  - m_RefCount: 8
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray:
   - m_RefCount: 3
     m_Data: {fileID: 6355445577534872092, guid: f5e991057ec978a44b2b2b8985d49d38, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 6355445577534872092, guid: 50de2190dc3456d4ba4028d52d9ab3e8, type: 3}
+  - m_RefCount: 2
+    m_Data: {fileID: 6355445577534872092, guid: 934074416fdf34de8800a9e7d061f023, type: 3}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -4, y: -1, z: 0}
@@ -5860,7 +5886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602695795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5981,6 +6007,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 23b95d21-5daa-46c4-9e1a-50a46cfba772
     m_ActionName: Player/Fire[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1602695802}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fe93b7b0-da46-4a7e-b43a-a7170966e683
+    m_ActionName: Player/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -6023,7 +6065,9 @@ MonoBehaviour:
   GROUNDED_DRAG_FORCE: 2
   m_IsGrounded: 0
   m_NumberJumps: 2
+  m_IsInteracting: 0
   m_ProjectilePrefab: {fileID: 596484208880901211, guid: 015bdbe6c1d7cb04baf4b16a8e22003a, type: 3}
+  m_TouchingInteractableTile: {fileID: 0}
 --- !u!1 &1686324540
 GameObject:
   m_ObjectHideFlags: 0
