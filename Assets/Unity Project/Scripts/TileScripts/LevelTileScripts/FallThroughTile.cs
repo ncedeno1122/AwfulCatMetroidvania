@@ -32,7 +32,7 @@ public class FallThroughTile : MonoBehaviour
                difference.y >= 0.5f;
         
     }
-
+    
     // + + + + | Collision Handling | + + + +
 
     private void OnTriggerEnter2D(Collider2D collision)
