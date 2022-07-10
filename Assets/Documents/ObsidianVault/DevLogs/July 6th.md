@@ -63,7 +63,7 @@ Ok, let's start here:
 	- Fall-Through (Break on Player-tagged obj.)
 	- Bomb-able? Spell-able? (Break on other tagged obj.)
 - InteractableTiles
-	- FloorSwitches
+	- FloorSwitches ^49e211
 		- Activated from above by Player-tagged obj.
 	- WallSwitches
 		- Activated by Player-tagged obj. interaction.

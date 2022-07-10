@@ -55,4 +55,12 @@ BOOM BABY I've just completed two poorly-named scripts, InteractToggleSwitch and
 
 There is just one thing though, that the OnTriggerStay function calls more frequently for colliders that are MOVING within the trigger, so it's leading to infrequent multiple calls of the TriggerTileEffect() thing. It's not a major problem as staying still and PRESSING interact works fine, but staying still and HOLDING is a bit patchy at the moment.
 
+---
 
+Now, I'll implement the same logic as my BreakOnPlayer script to detect if a FloorSwitch ([[July 6th#^49e211]]) is pressed.
+
+There's just one thing. It'd be cool to have an actual object representing the button get hit and do some of the communication about it...
+
+I kinda want to do this but I kinda don't as well... I've been at it for a while.
+
+I'll tell you one thing I **do** need to do is to actually get some sprites representing these tiles up in here. It's kinda dinky not having them.

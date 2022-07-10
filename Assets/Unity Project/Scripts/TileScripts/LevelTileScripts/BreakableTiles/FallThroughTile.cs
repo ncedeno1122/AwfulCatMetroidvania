@@ -5,20 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(BreakableTile))]
 public class FallThroughTile : MonoBehaviour
 {
-    private float m_SpriteWidthWorld;
-    private float m_SpriteHeightWorld;
-
     private BreakableTile m_BreakableTile;
-    private SpriteRenderer m_SpriteRenderer;
     private Collider2D m_Collider2D;
 
     private void Awake()
     {
         m_BreakableTile = GetComponent<BreakableTile>();
         m_Collider2D = GetComponent<Collider2D>();
-        m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        m_SpriteWidthWorld = m_SpriteRenderer.sprite.texture.width * m_SpriteRenderer.sprite.pixelsPerUnit;
-        m_SpriteHeightWorld = m_SpriteRenderer.sprite.texture.height * m_SpriteRenderer.sprite.pixelsPerUnit;
     }
 
     // + + + + | Functions | + + + + 
