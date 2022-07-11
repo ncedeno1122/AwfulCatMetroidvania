@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef1e211d9af34a42992194212e9fd73, type: 3}
   m_Name: FloorSwitchInteractableTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -439849221, guid: 1e774676234f66e438776b0c60abce64, type: 3}
+  m_Sprite: {fileID: 1206074512, guid: 88e42f65aec0ed04cbfa2aafb517ca16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
