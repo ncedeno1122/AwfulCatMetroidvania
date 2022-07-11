@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef1e211d9af34a42992194212e9fd73, type: 3}
   m_Name: ToggleInteractableTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 859594215, guid: eb5c409c250f8054696f20cf98ae8833, type: 3}
+  m_Sprite: {fileID: 826064441, guid: 0378de2b8bfe1464d87e0adaea5626ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef1e211d9af34a42992194212e9fd73, type: 3}
   m_Name: BreakableLevelTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -119639929, guid: b5f749eb1d84a6543a43a58db6f09780, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65f8799dc223340a786581e5e65f3111, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

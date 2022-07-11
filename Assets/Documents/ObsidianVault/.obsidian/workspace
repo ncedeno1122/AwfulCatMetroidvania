@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/July 7th.md",
+            "file": "Notes - Study/Ideas for Gameplay.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/July 7th.md",
+                "file": "Notes - Study/Ideas for Gameplay.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "e9425f6d6acb7d3c",
   "lastOpenFiles": [
+    "Notes - Study/Ideas for Gameplay.md",
     "DevLogs/July 7th.md",
     "DevLogs/July 6th.md",
     "DevLogs/July 5th.md",
