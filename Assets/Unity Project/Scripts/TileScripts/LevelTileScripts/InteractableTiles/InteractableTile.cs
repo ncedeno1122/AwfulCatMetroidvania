@@ -27,6 +27,10 @@ public class InteractableTile : LevelTileGOScript
 
     public static Tilemap m_LevelTileTilemap;
 
+    [SerializeField]
+    private List<InteractObserver> m_ObserverList = new();
+    public List<InteractObserver> ObserverList { get => m_ObserverList; }
+
     private void OnValidate()
     {
         TryAlignToGridPosition();
@@ -46,6 +50,7 @@ public class InteractableTile : LevelTileGOScript
         if (m_IsDebounced)
         {
             ToggleInteractableTile();
+            NotifyObservers();
             m_DebounceCRT = DebounceCRT(DEBOUNCE_TIME);
             StartCoroutine(m_DebounceCRT);
             //Debug.Log($"InteractableTile at {transform.position} has been interacted with!");
@@ -88,5 +93,13 @@ public class InteractableTile : LevelTileGOScript
         // Is our position properly rounded?
         var tilemapPosition = m_LevelTileTilemap.GetCellCenterWorld(Vector3Int.RoundToInt(transform.position));
         if (transform.position != tilemapPosition) transform.position = tilemapPosition;
+    }
+
+    private void NotifyObservers()
+    {
+        foreach (var observer in m_ObserverList)
+        {
+            observer.OnNotify(this);
+        }
     }
 }

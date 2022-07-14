@@ -17,4 +17,17 @@ In any case, I was really already doing this when I think about it. In making in
 
 ---
 
-Let's try and work on the first class for these fellas. I think I might still be able to 
+Let's try and work on the first class for these fellas. In my InteractableTile class, I've added an OnValidate and OnTransformParentChanged so that they align to the Tilemap when the scripts are reloaded.
+
+Now, let's take a look at how I want to implement the actual events side of all this mess.
+
+My prior problem before was that I wanted to use C# events for my InteractableTile's way of messaging its listeners, but I didn't have any way of knowing information about who actually SENT that event without predefining who we're talking about.
+
+Now that I have the ability to use UnityEvents and customize who I'm even making a listener, it's really tempting to use this approach. But, I still have to see how I'd use something like this.
+
+There *is* what I recall of the Observer Pattern, where we have a maintained list of listeners whom we have being some sort of listener with an On-whatever method we can invoke.
+At present, this seems to be the best approach, as I STILL would like to have some decency with how I handle these events. Yes, I COULD just have a UnityEvent defined in the scene with some references and behavior we hook up. But is that serializable? I don't know. Is that something that we can change and hook up at runtime, is that really reliable? I don't know! But what I do know is, this synchronous Observer Pattern might be a good idea here.
+
+The point is, I want to avoid this problem of not knowing who published the event and therefore not having a way to verify and approve the event. I'm going to do this in a list of Observers that I maintain from the InteractableTile. SHOULD be EZ.
+
+So that worked so far, but it seems like something that could be expanded upon.
