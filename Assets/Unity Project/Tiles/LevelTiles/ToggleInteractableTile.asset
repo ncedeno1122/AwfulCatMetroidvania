@@ -34,3 +34,5 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 6355445577534872092, guid: 934074416fdf34de8800a9e7d061f023, type: 3}
   m_Flags: 1
   m_ColliderType: 1
+  PersistentGOPrefab: {fileID: 596484208880901211, guid: 015bdbe6c1d7cb04baf4b16a8e22003a, type: 3}
+  m_PersistentGameObject: {fileID: 0}

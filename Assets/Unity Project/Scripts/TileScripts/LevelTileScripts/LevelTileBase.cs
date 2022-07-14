@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class LevelTileBase : Tile
 {
+
     //
 #if UNITY_EDITOR
     [MenuItem("Assets/Create/2D/Tiles/LevelTile")]
