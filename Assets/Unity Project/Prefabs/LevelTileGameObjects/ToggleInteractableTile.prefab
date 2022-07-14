@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6355445577534872089}
   - component: {fileID: 6355445577534872090}
   - component: {fileID: 6355445577534872091}
-  - component: {fileID: 8476297547201240667}
-  - component: {fileID: -1130963120595458232}
+  - component: {fileID: 340976062}
+  - component: {fileID: 340976061}
   m_Layer: 0
   m_Name: ToggleInteractableTile
   m_TagString: LevelTileGO
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.23950672, a: 0.08627451}
+  m_Sprite: {fileID: -918263606, guid: 88e42f65aec0ed04cbfa2aafb517ca16, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -113,7 +113,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8476297547201240667
+--- !u!114 &340976062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_TileIsToggle: 0
   m_IsToggled: 0
   m_IsDebounced: 1
---- !u!114 &-1130963120595458232
+--- !u!114 &340976061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

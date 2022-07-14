@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class InteractableTile : LevelTileGOScript
 {
@@ -23,6 +24,18 @@ public class InteractableTile : LevelTileGOScript
     private const float DEBOUNCE_TIME = 0.5f;
 
     private IEnumerator m_DebounceCRT;
+
+    public static Tilemap m_LevelTileTilemap;
+
+    private void OnValidate()
+    {
+        TryAlignToGridPosition();
+    }
+
+    private void OnTransformParentChanged()
+    {
+        TryAlignToGridPosition();
+    }
 
     // + + + + | Functions | + + + +
 
@@ -60,5 +73,20 @@ public class InteractableTile : LevelTileGOScript
         yield return new WaitForSeconds(debounceTime);
 
         m_IsDebounced = true;
+    }
+
+    private void TryAlignToGridPosition()
+    {
+        if (!gameObject.activeInHierarchy) return;
+
+        // Is our static Tilemap set?
+        if (m_LevelTileTilemap == null) m_LevelTileTilemap = GameObject.Find("LevelTileTilemap").GetComponent<Tilemap>();
+
+        // Are we parented to that Tilemap?
+        if (transform.parent != m_LevelTileTilemap.transform)transform.SetParent(m_LevelTileTilemap.transform, true);
+
+        // Is our position properly rounded?
+        var tilemapPosition = m_LevelTileTilemap.GetCellCenterWorld(Vector3Int.RoundToInt(transform.position));
+        if (transform.position != tilemapPosition) transform.position = tilemapPosition;
     }
 }
