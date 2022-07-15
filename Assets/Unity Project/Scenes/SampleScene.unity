@@ -6692,6 +6692,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NontoggleInteractableTile
       objectReference: {fileID: 0}
+    - target: {fileID: 8476297547201240667, guid: 1cc4da0468531420daa2b373b9028c63, type: 3}
+      propertyPath: m_ObserverList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476297547201240667, guid: 1cc4da0468531420daa2b373b9028c63, type: 3}
+      propertyPath: m_ObserverList.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476297547201240667, guid: 1cc4da0468531420daa2b373b9028c63, type: 3}
+      propertyPath: m_ObserverList.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cc4da0468531420daa2b373b9028c63, type: 3}
 --- !u!1001 &1740273930

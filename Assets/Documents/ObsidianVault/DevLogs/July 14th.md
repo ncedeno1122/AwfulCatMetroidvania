@@ -31,3 +31,22 @@ At present, this seems to be the best approach, as I STILL would like to have so
 The point is, I want to avoid this problem of not knowing who published the event and therefore not having a way to verify and approve the event. I'm going to do this in a list of Observers that I maintain from the InteractableTile. SHOULD be EZ.
 
 So that worked so far, but it seems like something that could be expanded upon.
+
+---
+
+Specifically, I need to get my Nontoggle/Toggle Listeners working. I'll have to see how I do this. I might just have to pull the OnNotify methods and Observer Lists down into a NontoggleListener and ToggleListener and all that.
+
+I'll try that, I don't know. Why not? When I'm refactoring and I see a redundancy, I'll get rid of it. Let's try it!
+
+I have to see if eventually I will make a distinction / union between my toggle and nontoggle interactable tiles via an interface or something...
+
+I'm stuck in a weird funny world where I... am an idiot. I know what's wrong. Loll....
+
+I DON'T need to send the toggle status in the OnNotify method that I'll use for both Nontoggle and ToggleObservers, I'll just pull that from the sender object I send as an argument.
+
+RIGHT, I'm good now I think. Let's test for some toggle and nontoggle listeners and all that fun stuff.
+
+Aw NOOOO, I forgot about how I can't display a list of interface fields in the  editor, rrrRRARgh. This disappoints me. Well, I'll just make it an abstract class. Shame though, I'd love for that to have worked.
+
+---
+
