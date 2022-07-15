@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
     private bool m_IsFalling = false;
     public int m_NumberJumps = 2;
 
+    [SerializeField]
+    private bool m_IsInteracting;
+    public bool IsInteracting { get => m_IsInteracting; }
+
     private float m_AimTimer = 0f;
     [Range(0.2f, 2f)]
     private float AIMING_COOLDOWN_TIME = 1f;
@@ -28,10 +32,12 @@ public class PlayerController : MonoBehaviour
     public GameObject m_ProjectilePrefab;
     private Transform m_ProjectileSpawn;
     private PlayerInput m_PlayerInput;
-    private InputAction m_MoveAction, m_JumpAction, m_FireAction;
+    private InputAction m_MoveAction, m_JumpAction, m_FireAction, m_InteractAction;
     private Rigidbody2D m_rb2d;
     private Animator m_Animator;
     private SpriteRenderer m_SpriteRenderer;
+    [SerializeReference]
+    private InteractableTile m_TouchingInteractableTile;
 
     private void Awake()
     {
@@ -39,6 +45,7 @@ public class PlayerController : MonoBehaviour
         m_MoveAction = m_PlayerInput.actions["Move"];
         m_JumpAction = m_PlayerInput.actions["Jump"];
         m_FireAction = m_PlayerInput.actions["Fire"];
+        m_InteractAction = m_PlayerInput.actions["Interact"];
 
         m_rb2d = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
@@ -154,6 +161,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnInteract(InputAction.CallbackContext ctx)
+    {
+        if (m_InteractAction.WasPressedThisFrame())
+        {
+            m_IsInteracting = true;
+        }
+        if (m_InteractAction.WasReleasedThisFrame())
+        {
+            m_IsInteracting = false;
+        }
+    }
+
     // + + + + | Functions | + + + + 
 
     private void HandleJumpInput()
@@ -245,7 +264,7 @@ public class PlayerController : MonoBehaviour
         //
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         //if (collision.collider.CompareTag("PhysEnviro") && collision.transform.position.y < transform.position.y)
         //{

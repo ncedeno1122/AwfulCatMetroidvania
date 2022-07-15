@@ -2,28 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.Events;
 
 public class LevelTilemapManager : MonoBehaviour
 {
     private Dictionary<Vector3Int, TileBase> m_DeletedPhysEnviroTiles = new();
+    public List<InteractableTile> InstantiatedInteractableTiles;
+    public InteractableTile[] InteractableTilesArray;
+    public UnityEvent AnEvent;
 
     public Tilemap m_PhysEnviroTilemap;
     public Tilemap m_LevelTileTilemap;
 
     private void OnValidate()
     {
-        if (m_PhysEnviroTilemap != null &&
-            m_LevelTileTilemap != null) return;
-
-        foreach(Transform child in transform)
+        // Link up with Tilemaps in Editor
+        if (m_PhysEnviroTilemap == null || m_LevelTileTilemap == null)
         {
-            if (m_PhysEnviroTilemap == null && child.name.Equals("PhysEnviroTilemap"))
+            foreach (Transform child in transform)
             {
-                m_PhysEnviroTilemap = child.GetComponent<Tilemap>();
+                if (m_PhysEnviroTilemap == null && child.name.Equals("PhysEnviroTilemap"))
+                {
+                    m_PhysEnviroTilemap = child.GetComponent<Tilemap>();
+                }
+                if (m_LevelTileTilemap == null && child.name.Equals("LevelTileTilemap"))
+                {
+                    m_LevelTileTilemap = child.GetComponent<Tilemap>();
+                }
             }
-            if (m_LevelTileTilemap == null && child.name.Equals("LevelTileTilemap"))
+        }
+
+        // Find Instantiated LevelTileGOs
+        if (InstantiatedInteractableTiles == null) InstantiatedInteractableTiles = new();
+        foreach(Transform tf in m_LevelTileTilemap.transform)
+        {
+            var interactable = tf.GetComponent<InteractableTile>();
+            if (interactable && !InstantiatedInteractableTiles.Contains(interactable))
             {
-                m_LevelTileTilemap = child.GetComponent<Tilemap>();
+                InstantiatedInteractableTiles.Add(interactable);
             }
         }
     }
@@ -32,6 +48,14 @@ public class LevelTilemapManager : MonoBehaviour
     {
         LevelTileGOScript.RequestTileDelete += HandleRequestTileDelete;
         LevelTileGOScript.RequestTileRestore += HandleRequestTileRestore;
+        LevelTileGOScript.RequestTileInteract += HandleRequestTileInteract;
+    }
+
+    private void OnDisable()
+    {
+        LevelTileGOScript.RequestTileDelete -= HandleRequestTileDelete;
+        LevelTileGOScript.RequestTileRestore -= HandleRequestTileRestore;
+        LevelTileGOScript.RequestTileInteract -= HandleRequestTileInteract;
     }
 
     // + + + + | Functions | + + + + 
@@ -79,6 +103,21 @@ public class LevelTilemapManager : MonoBehaviour
         var tilemapPosition = m_PhysEnviroTilemap.WorldToCell(worldPosition);
         Debug.Log($"Received request to RESTORE tile at {worldPosition} -> {tilemapPosition}!");
         RestorePhysEnviroTileAt(tilemapPosition);
+    }
+
+    private void HandleRequestTileInteract(Vector3 worldPosition, bool isAToggle, bool isToggled)
+    {
+        var tileMapPosition = m_LevelTileTilemap.WorldToCell(worldPosition);
+
+        if (isAToggle)
+        {
+            Debug.Log($"Received toggle interaction request at {worldPosition} -> {tileMapPosition}. Toggled: {isToggled}.");
+        }
+        else
+        {
+            Debug.Log($"Received non-toggle interaction request at {worldPosition} -> {tileMapPosition}!");
+        }
+        // TODO: IMPLEMENT INTERACTION ACTIONS somehow
     }
 
 }

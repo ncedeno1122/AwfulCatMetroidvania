@@ -11,8 +11,8 @@ public class BreakableTile : LevelTileGOScript
 
     private bool m_IsPlayerInBlock = false;
     public bool IsPlayerInBlock { get => m_IsPlayerInBlock; }
-    private IEnumerator m_BreakAndRegenCRT;
 
+    private IEnumerator m_BreakAndRegenCRT;
     private ParticleSystem m_Particle;
 
     private void Awake()

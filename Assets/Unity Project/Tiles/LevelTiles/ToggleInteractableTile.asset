@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ef1e211d9af34a42992194212e9fd73, type: 3}
-  m_Name: FallThroughTile
+  m_Name: ToggleInteractableTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1428482592, guid: 88e42f65aec0ed04cbfa2aafb517ca16, type: 3}
+  m_Sprite: {fileID: -918263606, guid: 88e42f65aec0ed04cbfa2aafb517ca16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -31,6 +31,8 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 6355445577534872092, guid: 50de2190dc3456d4ba4028d52d9ab3e8, type: 3}
+  m_InstancedGameObject: {fileID: 6355445577534872092, guid: 934074416fdf34de8800a9e7d061f023, type: 3}
   m_Flags: 1
   m_ColliderType: 1
+  PersistentGOPrefab: {fileID: 596484208880901211, guid: 015bdbe6c1d7cb04baf4b16a8e22003a, type: 3}
+  m_PersistentGameObject: {fileID: 0}
