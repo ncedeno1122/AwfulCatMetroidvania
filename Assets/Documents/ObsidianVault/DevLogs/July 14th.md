@@ -50,3 +50,10 @@ Aw NOOOO, I forgot about how I can't display a list of interface fields in the  
 
 ---
 
+Before I'm to close this branch though, I want to try making a door or something like that... Lemme try really quick!
+
+And it worked, haha! How neat is that? And this is just a nontoggle door, I could really make the behavior more robust by splitting my one function into two, one to open and then close the door. But, that's not something I have to do right now. I still want to hash out more important things now.
+
+With this, for now, I can close my interactable tiles branch. I'm happy with the current system I've made. How nice :).
+
+I'll inevitably have to revisit this a lot too so I'm not really saying goodbye for long.

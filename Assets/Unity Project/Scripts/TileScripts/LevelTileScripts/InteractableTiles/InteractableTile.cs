@@ -50,7 +50,7 @@ public class InteractableTile : LevelTileGOScript
         if (m_IsDebounced)
         {
             ToggleInteractableTile();
-            //NotifyObservers();
+            NotifyObservers();
             m_DebounceCRT = DebounceCRT(DEBOUNCE_TIME);
             StartCoroutine(m_DebounceCRT);
             //Debug.Log($"InteractableTile at {transform.position} has been interacted with!");
