@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "121b71ff573124f9",
+        "id": "e9425f6d6acb7d3c",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/June 15th.md",
+            "file": "DevLogs/July 14th.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/June 15th.md",
+                "file": "DevLogs/July 14th.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "121b71ff573124f9",
+  "active": "e9425f6d6acb7d3c",
   "lastOpenFiles": [
-    "Notes - Study/Citations & Resources.md",
-    "DevLogs/June 15th.md",
-    "DevLogs/July 13th.md",
     "DevLogs/July 14th.md",
+    "DevLogs/July 13th.md",
     "DevLogs/July 5th.md",
     "DevLogs/July 6th.md",
     "DevLogs/July 7th.md",
     "DevLogs/July 11th.md",
     "Notes - Study/Ideas for Gameplay.md",
-    "DevLogs/June 29.md"
+    "DevLogs/June 29.md",
+    "DevLogs/June 28.md",
+    "Notes - Study/Ideas for Quests and Hints.md"
   ]
 }
