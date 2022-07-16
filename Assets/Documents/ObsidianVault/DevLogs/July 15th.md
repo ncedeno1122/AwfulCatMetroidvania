@@ -53,3 +53,4 @@ I'm going to commit this work so far in the Github so I can think on this elsewh
 
 I had a bit of a problem trying to use images and link to other addresses... I made a folder and another markdown file both titled "...md" and "..." which messed EVERYTHING up. So, I reverted the changes and I copied everything down so I could do it again. No problem, just a little copy and paste!
 
+***OOOOKKK***, not doing that again lol. In any case, I'm glad that I'm back.
