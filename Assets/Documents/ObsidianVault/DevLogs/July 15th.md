@@ -14,6 +14,7 @@ I had an idea about talking to characters and being able to perform different qu
 	If you could talk to people, you could maybe talk with the spirits of those who have passed on or something like that. That's an easy little questline right there. But I have to think if that aligns with my formula and all that. Let's have a think.
 
 Literally citing from the Wikipedia page on Metroidvanias (https://en.wikipedia.org/wiki/Metroidvania),
+
 >Igarashi described what he believed were key elements in the genre. These include designing maps that encourage exploration but which still guide the player on a main path through the game and providing means where the player can be aware of where they are in the game world at any time. This can be accomplished by graphical themes through the game's world, visually unique milestones at key game point, overall map and player status information screens, and the means of moving around the map quickly.[[9]](https://en.wikipedia.org/wiki/Metroidvania#cite_note-gdc2014-10) Russ Frushtick from _[Polygon](https://en.wikipedia.org/wiki/Polygon_(website) "Polygon (website)")_ observed that many modern Metroidvanias not only have these qualities, but also find a means to tell a narrative through the world's environments without necessarily relying on cutscenes or dialog.
 This article was very valuable to my research. With this, I can more confidently  say that level design is my priority, but with an interconnected world. This should be exciting to do... REALLY exciting...
 
