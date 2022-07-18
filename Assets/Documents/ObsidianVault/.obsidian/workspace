@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "e9425f6d6acb7d3c",
+        "id": "c5780758d9b4b9a8",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -88,8 +88,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "e9425f6d6acb7d3c",
+  "active": "c5780758d9b4b9a8",
   "lastOpenFiles": [
+    "DevLogs/July 17th.md",
     "DevLogs/July 15th.md",
     "DevLogs/July 5th.md",
     "Notes - Study/Citations & Resources.md",
@@ -98,7 +99,6 @@
     "DevLogs/July 13th.md",
     "DevLogs/July 6th.md",
     "DevLogs/July 7th.md",
-    "DevLogs/July 11th.md",
-    "Notes - Study/Ideas for Gameplay.md"
+    "DevLogs/July 11th.md"
   ]
 }
