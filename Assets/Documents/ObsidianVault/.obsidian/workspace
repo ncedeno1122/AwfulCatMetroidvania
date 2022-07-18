@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "c5780758d9b4b9a8",
+        "id": "e9425f6d6acb7d3c",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -88,17 +88,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "c5780758d9b4b9a8",
+  "active": "e9425f6d6acb7d3c",
   "lastOpenFiles": [
+    "Notes - Study/Citations & Resources.md",
+    "Notes - Study/Ideas for Quests and Hints.md",
     "DevLogs/July 17th.md",
     "DevLogs/July 15th.md",
     "DevLogs/July 5th.md",
-    "Notes - Study/Citations & Resources.md",
     "Notes - Study/References.md",
     "DevLogs/July 14th.md",
     "DevLogs/July 13th.md",
     "DevLogs/July 6th.md",
-    "DevLogs/July 7th.md",
-    "DevLogs/July 11th.md"
+    "DevLogs/July 7th.md"
   ]
 }

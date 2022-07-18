@@ -41,3 +41,9 @@ The number of active blades on the macahuitl could be a general passive too, lim
 
 I'm interested in the idea of somehow limiting resources if they're particularly strong or movement-based. AND representing that in a cool way if possible. The obsidian blades of a macahuitl would be neat for sure, but possibly not easy to read unless the center is also a slider too.
 
+---
+
+I'd begun spriting the moon character I had, charting out some traits, and all that stuff. I think I'll call her "Kowi", which I derived from the  K'iche Mayan word "kowirik", a verb meaning to fortify, become strong, or become hard ([[Citations & Resources#^e2ef21]]). If I'm implementing melee things, and a dash ability with her, that might be a useful. "Kowi" has a nice ring to it, I think I might keep it.
+
+I want her to be a chad, lol. BTW, this is a great opportunity to give her a moon shield or something to that effect. She's going to be a warrior, a bit unlike the sun character I have whom I currently call "Gilberto". This will change.
+
