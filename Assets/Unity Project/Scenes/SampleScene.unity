@@ -1492,10 +1492,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -0.25
-    y: -0.18750001
-    width: 0.5
-    height: 0.37500003
+    x: 0
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -6627,9 +6627,10 @@ GameObject:
   - component: {fileID: 1602695798}
   - component: {fileID: 1602695801}
   - component: {fileID: 1602695796}
+  - component: {fileID: 6163553445257701984}
   - component: {fileID: 1602695800}
   - component: {fileID: 1602695802}
-  - component: {fileID: 6163553445257701984}
+  - component: {fileID: 6163553445257701985}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6903,7 +6904,6 @@ MonoBehaviour:
   m_IsGrounded: 0
   m_NumberJumps: 2
   m_IsInteracting: 0
-  m_ProjectilePrefab: {fileID: 596484208880901211, guid: 015bdbe6c1d7cb04baf4b16a8e22003a, type: 3}
   m_TouchingInteractableTile: {fileID: 0}
 --- !u!1 &1686324540
 GameObject:
@@ -7474,3 +7474,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6163553445257701985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602695795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24cdf8feda964beda0767f12349776d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ProjectilePrefab: {fileID: 596484208880901211, guid: 015bdbe6c1d7cb04baf4b16a8e22003a, type: 3}
+  m_ProjectileSpawn: {fileID: 1276826464}

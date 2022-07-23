@@ -19,18 +19,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool m_IsInteracting;
     public bool IsInteracting { get => m_IsInteracting; }
-
-    private float m_AimTimer = 0f;
-    [Range(0.2f, 2f)]
-    private float AIMING_COOLDOWN_TIME = 1f;
-    private bool m_WeaponReadyToFire = true;
-    private const float FIRE_WEAPON_COOLDOWN = 0.25f;
     
     private Vector2 m_MovementInput = Vector2.zero;
-    private IEnumerator m_FireWeaponCooldownCRT;
 
-    public GameObject m_ProjectilePrefab;
-    private Transform m_ProjectileSpawn;
+    private FireProjectileScript m_FireProjectileScript;
+
     private PlayerInput m_PlayerInput;
     private InputAction m_MoveAction, m_JumpAction, m_FireAction, m_InteractAction;
     private Rigidbody2D m_rb2d;
@@ -41,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        m_FireProjectileScript = GetComponent<FireProjectileScript>();
+
         m_PlayerInput = GetComponent<PlayerInput>();
         m_MoveAction = m_PlayerInput.actions["Move"];
         m_JumpAction = m_PlayerInput.actions["Jump"];
@@ -50,8 +45,6 @@ public class PlayerController : MonoBehaviour
         m_rb2d = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-
-        m_ProjectileSpawn = transform.GetChild(0);
     }
 
     private void FixedUpdate()
@@ -86,24 +79,6 @@ public class PlayerController : MonoBehaviour
                 m_rb2d.velocity = new Vector2(m_rb2d.velocity.x, m_rb2d.velocity.y);
             }
         }
-
-        // Update m_AimTimer
-        // TODO: Move to CRT?
-        if (m_AimTimer < AIMING_COOLDOWN_TIME)
-        {
-            m_AimTimer += Time.fixedDeltaTime;
-            if (!m_Animator.GetBool("IsAiming"))
-            {
-                m_Animator.SetBool("IsAiming", true);
-            }
-        }
-        else
-        {
-            if (m_Animator.GetBool("IsAiming"))
-            {
-                m_Animator.SetBool("IsAiming", false);
-            }
-        }
     }
 
     // + + + + | Input Events | + + + + 
@@ -112,7 +87,6 @@ public class PlayerController : MonoBehaviour
     {
         var inputVec2 = ctx.ReadValue<Vector2>();
 
-        //if (m_MoveAction.WasPressedThisFrame())
         if (inputVec2 != m_MovementInput)
         {
             // Is our new X input different from our old one AND not zero?
@@ -120,12 +94,6 @@ public class PlayerController : MonoBehaviour
             {
                 m_SpriteRenderer.flipX = inputVec2.x < 0 && inputVec2 != Vector2.zero;
             }
-
-            // Flip to the proper facing direction based on X input alone, if aiming
-            //if (inputVec2.x != 0 || (m_AimTimer < AIMING_COOLDOWN_TIME && inputVec2.y != 0))
-            //{
-            //    m_SpriteRenderer.flipX = inputVec2.x < 0 && inputVec2 != Vector2.zero;
-            //}
         }
 
         // Update MovementInput
@@ -145,19 +113,7 @@ public class PlayerController : MonoBehaviour
     {
         if (m_FireAction.WasPressedThisFrame())
         {
-            if (m_WeaponReadyToFire)
-            {
-                // Create Projectile
-                CreateProjectile();
-
-                //Debug.Log("Can fire weapon!");
-                m_FireWeaponCooldownCRT = FireWeaponCooldownCRT();
-                StartCoroutine(m_FireWeaponCooldownCRT);
-            }
-            else
-            {
-                //Debug.Log("Sorry, can't fire weapon...");
-            }
+            m_FireProjectileScript.TryFire(m_MovementInput, m_SpriteRenderer.flipX);
         }
     }
 
@@ -198,54 +154,6 @@ public class PlayerController : MonoBehaviour
         m_NumberJumps--;
         //m_rb2d.AddForce(Vector2.up * JUMP_FORCE, ForceMode2D.Impulse);
         m_rb2d.velocity = new Vector2(m_rb2d.velocity.x * 0.5f, JUMP_FORCE);
-    }
-
-    private IEnumerator FireWeaponCooldownCRT()
-    {
-        //Debug.Log("No shooty! (from CRT)");
-        var elapsedFixedDeltaTime = 0f;
-        m_WeaponReadyToFire = false;
-
-        // Animation
-        m_AimTimer = 0f; // Sets aiming animation to true
-        m_Animator.SetTrigger("FireWeapon");
-
-        while (elapsedFixedDeltaTime < FIRE_WEAPON_COOLDOWN)
-        {
-            elapsedFixedDeltaTime += Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
-        }
-
-        m_WeaponReadyToFire = true;
-        m_Animator.ResetTrigger("FireWeapon");
-        //Debug.Log("Ok now shooty (done with CRT)");
-    }
-
-    private void CreateProjectile()
-    {
-        // Calculate Shooting Angle and Position
-        var shootingAngle = 0f;
-        var spawnPosition = Vector3.zero;
-        if (!m_SpriteRenderer.flipX)
-        {
-            shootingAngle += (m_MovementInput.y != 0f ? (m_MovementInput.y > 0 ? 45f : -45f) : 0f);
-            spawnPosition = transform.position + m_ProjectileSpawn.localPosition;
-        }
-        else
-        {
-            shootingAngle = 180f + (m_MovementInput.y != 0f ? (m_MovementInput.y > 0 ? -45f : 45f) : 0f);
-            spawnPosition = transform.position + new Vector3(m_ProjectileSpawn.localPosition.x * -1, m_ProjectileSpawn.localPosition.y, 0f);
-        }
-
-        var cosVelo = Mathf.Cos(Mathf.Deg2Rad * shootingAngle);
-        var sinVelo = Mathf.Sin(Mathf.Deg2Rad * shootingAngle);
-
-        // Create Projectile at position
-        var projectile = Instantiate(m_ProjectilePrefab, spawnPosition, Quaternion.identity);
-        var projectileRb = projectile.GetComponent<Rigidbody2D>();
-
-        // Launch the Projectile
-        projectileRb.velocity = new Vector2(cosVelo, sinVelo) * 15f;
     }
 
     // + + + + | Collision Detection | + + + + 
