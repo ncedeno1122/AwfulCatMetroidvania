@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/July 18th.md",
+            "file": "DevLogs/July 23rd.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/July 18th.md",
+                "file": "DevLogs/July 23rd.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,15 +90,15 @@
   },
   "active": "e9425f6d6acb7d3c",
   "lastOpenFiles": [
-    "Notes - Study/Ideas for Gameplay.md",
+    "DevLogs/July 19th.md",
     "DevLogs/July 18th.md",
+    "DevLogs/July 23rd.md",
+    "Notes - Study/Ideas for Gameplay.md",
     "Notes - Study/Citations & Resources.md",
     "DevLogs/July 17th.md",
     "Notes - Study/Ideas for Quests and Hints.md",
     "DevLogs/July 15th.md",
     "DevLogs/July 5th.md",
-    "Notes - Study/References.md",
-    "DevLogs/July 14th.md",
-    "DevLogs/July 13th.md"
+    "Notes - Study/References.md"
   ]
 }
