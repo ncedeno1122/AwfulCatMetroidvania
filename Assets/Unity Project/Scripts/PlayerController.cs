@@ -74,37 +74,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //// Are we grounded?
-        ////var groundCheckCollider = Physics2D.OverlapBox(m_rb2d.position + (Vector2.down * (m_SpriteRenderer.size.y / 2f)), (Vector2.one * 0.25f), 0f, LayerMask.GetMask("PhysEnviro"));
-        ////m_IsGrounded = groundCheckCollider && groundCheckCollider.CompareTag("PhysEnviro");
-        //m_IsGrounded = Mathf.Abs(m_rb2d.velocity.y) <= 0.05f; // Some small number
-        //m_IsFalling = m_IsGrounded == false && m_rb2d.velocity.y < 0f;
-        //m_Animator.SetBool("IsGrounded", m_IsGrounded);
-        //m_Animator.SetBool("IsFalling", m_IsFalling);
-
-        //if (m_IsGrounded && m_NumberJumps < 2) m_NumberJumps = 2;
-
-        //// TODO: Add dampening / inertial force to run cycle
-
-        //// Move
-        //var velocityXValue = m_rb2d.velocity.x + (m_MovementInput.x * MOVE_SPEED * Time.fixedDeltaTime);
-        //if (m_MovementInput != Vector2.zero)
-        //{
-        //    m_rb2d.velocity = new Vector2(Mathf.Clamp(velocityXValue, -MOVE_SPEED/3f, MOVE_SPEED/3f), m_rb2d.velocity.y);
-        //}
-        //else
-        //{
-        //    //
-        //    if (m_IsGrounded)
-        //    {
-        //        m_rb2d.velocity = new Vector2(m_rb2d.velocity.x * 0.75f, m_rb2d.velocity.y);
-        //    }
-        //    else
-        //    {
-        //        m_rb2d.velocity = new Vector2(m_rb2d.velocity.x, m_rb2d.velocity.y);
-        //    }
-        //}
-
         CurrentState.OnFixedUpdate();
     }
 
@@ -112,24 +81,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
-        //var inputVec2 = ctx.ReadValue<Vector2>();
-
-        //if (inputVec2 != m_MovementInput)
-        //{
-        //    // Is our new X input different from our old one AND not zero?
-        //    if (inputVec2.x != m_MovementInput.x && inputVec2.x != 0)
-        //    {
-        //        m_SpriteRenderer.flipX = inputVec2.x < 0 && inputVec2 != Vector2.zero;
-        //    }
-        //}
-
-        //// Update MovementInput
-        //m_MovementInput = inputVec2;
-
-        //// Animator
-        //m_Animator.SetInteger("XInputInt", (int)inputVec2.x);
-        //m_Animator.SetInteger("YInputInt", (int)inputVec2.y);
-
         CurrentState.OnMove(ctx);
     }
 
@@ -180,32 +131,6 @@ public class PlayerController : MonoBehaviour
         m_IsGrounded = false;
         m_Animator.SetBool("IsGrounded", false);
         m_NumberJumps--;
-        //m_rb2d.AddForce(Vector2.up * JUMP_FORCE, ForceMode2D.Impulse);
         m_rb2d.velocity = new Vector2(m_rb2d.velocity.x * 0.5f, JUMP_FORCE);
-    }
-
-    // + + + + | Collision Detection | + + + + 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //if (collision.collider.CompareTag("PhysEnviro") && collision.transform.position.y < transform.position.y)
-        //{
-        //    m_IsGrounded = true;
-        //    m_Animator.SetBool("IsGrounded", true);
-        //}
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        //
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        //if (collision.collider.CompareTag("PhysEnviro") && collision.transform.position.y < transform.position.y)
-        //{
-        //    m_IsGrounded = false;
-        //    m_Animator.SetBool("IsGrounded", false);
-        //}
     }
 }
