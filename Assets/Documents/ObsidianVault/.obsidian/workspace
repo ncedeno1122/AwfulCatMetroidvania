@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/July 30th.md",
+            "file": "DevLogs/July 31st.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/July 30th.md",
+                "file": "DevLogs/July 31st.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,8 +90,8 @@
   },
   "active": "e9425f6d6acb7d3c",
   "lastOpenFiles": [
-    "DevLogs/July 23rd.md",
     "DevLogs/July 30th.md",
+    "DevLogs/July 23rd.md",
     "DevLogs/July 13th.md",
     "DevLogs/July 11th.md",
     "DevLogs/July 6th.md",

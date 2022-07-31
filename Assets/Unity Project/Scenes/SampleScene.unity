@@ -1492,10 +1492,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.001039501
     y: 0
-    width: 1
-    height: 1
+    width: 0.997921
+    height: 0.9981516
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -6902,8 +6902,10 @@ MonoBehaviour:
   JUMP_FORCE: 5
   GROUNDED_DRAG_FORCE: 2
   m_IsGrounded: 0
+  m_IsFalling: 0
   m_NumberJumps: 2
   m_IsInteracting: 0
+  m_MovementInput: {x: 0, y: 0}
   m_TouchingInteractableTile: {fileID: 0}
 --- !u!1 &1686324540
 GameObject:

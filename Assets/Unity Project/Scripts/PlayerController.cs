@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     private bool m_IsFalling = false;
     public bool IsFalling { get => m_IsFalling; set => m_IsFalling = value; }
 
-    public int m_NumberJumps = 2;
+    [SerializeField]
+    private int m_NumberJumps = 2;
+    public int NumberJumps { get => m_NumberJumps; set => m_NumberJumps = value; }
 
     [SerializeField]
     private bool m_IsInteracting;
@@ -108,29 +110,19 @@ public class PlayerController : MonoBehaviour
         CurrentState.OnInteract(ctx);
     }
 
-    // + + + + | Functions | + + + + 
+    // + + + + | Collision Handling | + + + + 
 
-    private void HandleJumpInput()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (m_IsGrounded && m_NumberJumps > 0)
-        {   
-            Jump();
-        }
-        else
-        {
-            if (m_NumberJumps > 0)
-            {
-                Jump();
-            }
-        }
+        //
     }
 
-    private void Jump()
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        //Debug.Log("Jump!");
-        m_IsGrounded = false;
-        m_Animator.SetBool("IsGrounded", false);
-        m_NumberJumps--;
-        m_rb2d.velocity = new Vector2(m_rb2d.velocity.x * 0.5f, JUMP_FORCE);
+        //
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        //
     }
 }

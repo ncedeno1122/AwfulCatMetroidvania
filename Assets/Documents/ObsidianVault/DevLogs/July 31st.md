@@ -1,0 +1,32 @@
+Continuing directly on from [[July 30th]]! In the words of the Mayans (Yucatecan ones anyway,), ma'alo'ob k'iin! I love that saying. Being gracious for the sun, the day, and everything it brings really strikes me. In any case, let's get on with the show.
+
+Last night, I had more of a realization about what an Ability (as I called them then) actually is. Here I was talking about passive abilities and skills. Both of them technically have a start point and an end point in time, in which their effects are applied and all that stuff. For skills that require player input to start their effects, they would need to override the current state of the PlayerController somehow... How specifically? Well, I hope to look more into that today.
+
+---
+
+That brings me back to my current little place of dealing with the state machine for the PlayerController. I wanted to avoid making the PlayerController into a monolithic script that had all the behavior I wanted. Instead, I thought it more appropriate to make the behaviors more readable by separating their behavior into different states and all that. My only question now is, **what is the scope of each state?**
+
+Why I even have to ask this is because I've never had a state machine whose scope is actually the whole of a character's movement. I guess it's not really that different. The scope is influenced by the fact that we're literally handing Player Input and all that. So I have to think in terms of that. *What do we do with input in each state?*
+
+A major question of mine is, what states even are there? I can do one that governs the character's movement and all that stuff. I have that one already in fact...
+Maybe I have a state that goes on when the player gets hurt, or **any other time the ability to move the player via the input and external factors conflict.** You know how you get impulsed back in Metroid when you take damage? Like that kinda, you can't really control too much about as you're getting hurt and all that stuff. And what about times if you get launched through a cannon or something like that, where you can maybe DI the launch but not by much or something? I think I'm getting more about this now.
+
+#### Semantic Idle States
+Moreover, there's a lot of power in having semantically idle states. You know how in Metroid when you get on an Elevator you're just STILL? This *could* be achieved in many different ways (literally spriting the character on the elevator and moving THAT sprite), but if there's a semantically idle state related to that then we have the power of knowing where it might be used. After all, that idle state is different to one reserved for skills, for doing something else, etc.
+
+Yeah, I think I'm getting more of this now. I need to try and explain it really simply so I don't forget though. My PlayerStates control how the Player is controlled in different situations.
+
+***I have to rework the default physics or create a more in-depth character physics profile for both Achik and Kowi***. This can be achieved with a ScriptableObject :D (likely, anyway)
+
+---
+
+Now, I've reimplemented jumping into the main PlayerMoveState. I was worried that I may need a jump state or something like that, but UNTIL I DO I'll proceed in this manner.
+
+#### WaitUntil States
+It just occurred to me that I can also make WaitUntil states, that wait until some state and potentially target a state to turn to after (in the constructor) its condition is met. For example, for a death animation, we can WaitUntilGrounded and then play an animation like that afterwards or something.
+
+That's pretty neat, I suppose. In any case, let's continue with my work for now...
+
+What's next is actually learning how to activate a skill based on certain inputs. I think of something like Down-B-ing in smash. Perhaps there's something I can make, like how the inputs in SoulCalibur work for detecting more complex strings of inputs... then again, I'm not sure that's entirely necessary.
+
+I know what I need. I have my Fire button for a basic input, but I need a second Fire type input. Perhaps I need to call this button something else...

@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMoveState : PlayerState
 {
+
     private Rigidbody2D m_rb2d;
 
     public PlayerMoveState(PlayerController context) : base(context)
@@ -40,7 +41,7 @@ public class PlayerMoveState : PlayerState
         m_Context.Animator.SetBool("IsGrounded", m_Context.IsGrounded);
         m_Context.Animator.SetBool("IsFalling", m_Context.IsFalling);
 
-        if (m_Context.IsGrounded && m_Context.m_NumberJumps < 2) m_Context.m_NumberJumps = 2;
+        if (m_Context.IsGrounded && m_Context.NumberJumps < 2) m_Context.NumberJumps = 2;
 
         // TODO: Add dampening / inertial force to run cycle
 
@@ -71,7 +72,7 @@ public class PlayerMoveState : PlayerState
 
     public override void OnJump(InputAction.CallbackContext ctx)
     {
-        if (m_Context.JumpAction.WasPerformedThisFrame()) ; //TODO: HandleJumpInput();
+        if (m_Context.JumpAction.WasPerformedThisFrame()) HandleJumpInput();
     }
 
     public override void OnMove(InputAction.CallbackContext ctx)
@@ -93,5 +94,48 @@ public class PlayerMoveState : PlayerState
         // Animator
         m_Context.Animator.SetInteger("XInputInt", (int)inputVec2.x);
         m_Context.Animator.SetInteger("YInputInt", (int)inputVec2.y);
+    }
+
+    // + + + + | Functions | + + + +
+
+    private void HandleJumpInput()
+    {
+        if (m_Context.IsGrounded && m_Context.NumberJumps > 0)
+        {
+            Jump();
+        }
+        else
+        {
+            if (m_Context.NumberJumps > 0)
+            {
+                Jump();
+            }
+        }
+    }
+
+    private void Jump()
+    {
+        //Debug.Log("Jump!");
+        m_Context.IsGrounded = false;
+        m_Context.Animator.SetBool("IsGrounded", false);
+        m_Context.NumberJumps--;
+        m_rb2d.velocity = new Vector2(m_rb2d.velocity.x * 0.5f, m_Context.JUMP_FORCE);
+    }
+
+    // + + + + | Collision Handling | + + + + 
+
+    public override void OnCollisionEnter2D(Collision2D collision)
+    {
+        //
+    }
+
+    public override void OnCollisionExit2D(Collision2D collision)
+    {
+        //
+    }
+
+    public override void OnCollisionStay2D(Collision2D collision)
+    {
+        //
     }
 }
