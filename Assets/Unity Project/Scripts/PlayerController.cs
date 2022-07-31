@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public InputAction FireAction { get => m_FireAction; }
     private InputAction m_InteractAction;
     public InputAction InteractAction { get => m_InteractAction;}
+    private InputAction m_SkillAction;
+    public InputAction SkillAction { get => m_SkillAction; }
 
     private Rigidbody2D m_rb2d;
     public Rigidbody2D Rb2d { get => m_rb2d; }
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
         m_JumpAction = m_PlayerInput.actions["Jump"];
         m_FireAction = m_PlayerInput.actions["Fire"];
         m_InteractAction = m_PlayerInput.actions["Interact"];
+        m_SkillAction = m_PlayerInput.actions["Skill"];
 
         m_rb2d = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
@@ -108,6 +111,11 @@ public class PlayerController : MonoBehaviour
         }
 
         CurrentState.OnInteract(ctx);
+    }
+
+    public void OnSkill(InputAction.CallbackContext ctx)
+    {
+        CurrentState.OnSkill(ctx);
     }
 
     // + + + + | Collision Handling | + + + + 

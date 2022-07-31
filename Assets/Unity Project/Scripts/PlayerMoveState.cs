@@ -96,6 +96,46 @@ public class PlayerMoveState : PlayerState
         m_Context.Animator.SetInteger("YInputInt", (int)inputVec2.y);
     }
 
+    public override void OnSkill(InputAction.CallbackContext ctx)
+    {
+        if (!m_Context.SkillAction.WasPerformedThisFrame()) return;
+
+        // Directional Input?
+        var input = m_Context.MovementInput; 
+
+        if (input.x == 0f && input.y == 0f) // Deadzones are useful here...
+        {
+            // Default Special
+            Debug.Log("Default Special!");
+        }
+        else if (input.x == 0f)
+        {
+            if (input.y > 0)
+            {
+                // UP
+                Debug.Log("Up Special!");
+            }
+            else
+            {
+                // DOWN
+                Debug.Log("Down Special!");
+            }
+        }
+        else if (input.y == 0f)
+        {
+            if (input.x > 0)
+            {
+                // RIGHT
+                Debug.Log("Right Special!");
+            }
+            else
+            {
+                // LEFT
+                Debug.Log("Left Special!");
+            }
+        }
+    }
+
     // + + + + | Functions | + + + +
 
     private void HandleJumpInput()

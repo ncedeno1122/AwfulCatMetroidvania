@@ -25,6 +25,7 @@ public abstract class PlayerState
     public abstract void OnJump(InputAction.CallbackContext ctx);
     public abstract void OnFire(InputAction.CallbackContext ctx);
     public abstract void OnInteract(InputAction.CallbackContext ctx);
+    public abstract void OnSkill(InputAction.CallbackContext ctx);
 
     // TODO: Add Collision Wrapper Functions
     public abstract void OnCollisionEnter2D(Collision2D collision);

@@ -14,9 +14,9 @@ Maybe I have a state that goes on when the player gets hurt, or **any other time
 #### Semantic Idle States
 Moreover, there's a lot of power in having semantically idle states. You know how in Metroid when you get on an Elevator you're just STILL? This *could* be achieved in many different ways (literally spriting the character on the elevator and moving THAT sprite), but if there's a semantically idle state related to that then we have the power of knowing where it might be used. After all, that idle state is different to one reserved for skills, for doing something else, etc.
 
-Yeah, I think I'm getting more of this now. I need to try and explain it really simply so I don't forget though. My PlayerStates control how the Player is controlled in different situations.
+Yeah, I think I'm getting more of this now. I need to try and explain it really simply so I don't forget though. My PlayerStates control how the Player is controlled in different situations. ***Essentially, each State contains logic I'd write in the PlayerController class were it not a more flexible context class.***
 
-***I have to rework the default physics or create a more in-depth character physics profile for both Achik and Kowi***. This can be achieved with a ScriptableObject :D (likely, anyway)
+***I have to rework the default physics or create a more in-depth character physics profile for both Achik and Kowi***. This can be achieved with a ScriptableObject :D (likely, anyway).
 
 ---
 
@@ -30,3 +30,41 @@ That's pretty neat, I suppose. In any case, let's continue with my work for now.
 What's next is actually learning how to activate a skill based on certain inputs. I think of something like Down-B-ing in smash. Perhaps there's something I can make, like how the inputs in SoulCalibur work for detecting more complex strings of inputs... then again, I'm not sure that's entirely necessary.
 
 I know what I need. I have my Fire button for a basic input, but I need a second Fire type input. Perhaps I need to call this button something else...
+
+---
+
+So I've been looking at the InputSystem documentation and while I can't say I fully understand it on my first read, Interactions might be what I'm looking for... I have to see, but it seems that I can create more Actions, things like OnMove, OnFire, OnJump, OnInteract, etc..
+
+From what I understand, these event handling functions are invoked every time some information about that InputAction are changed. This is how I can move the character, poll for button presses, all that.
+
+BUT, Interactions will only invoke the Action's event if a certain input pattern or something like that is met (Holding, Tapping, etc.). This could be useful if I was to make some actions about my new input. 
+
+This is versatile... Very versatile. I have to see how I'll handle these things...
+
+What's neat about them is that I don't seem to be able to check them in tandem with other input things, I'll have to do that in the script. For example, if I invoked the Skill Action by holding, multi-tapping, etc, I'd have to determine in-script. For that reason, I'll have to change the nomenclature of my Actions. Depending on the Interaction I'm waiting for, I can append --Tap, MultiTap, Hold, etc. to the end of my actions.
+
+This is, of course, my initial understanding of this very versatile system. I'm weirded out by that you can add multiple Interactions to one Action.
+
+What may be useful is to decouple my ideas somewhat. **I must create interactions for the events that happen to that specific input**, and **I must listen for these in combination with other data in scripts**. Essentially, I can listen to the inputs like anything else, but I have to process what actually happens elsewhere, like for directional inputs (a la Down-B).
+
+Let's try programming this... 
+
+#### Achik Spirit Form Input
+> Also I think it'd be nice to have a MultiTap input from which, for Achik, I can trigger his Spirit Form while holding DOWN on the PlayerInput Vector3.
+
+---
+
+Ok so I'm now very simply reading inputs as they pertain to directions. This is pretty good, I'm pleased so far, but now I need to see how it is that I'll hook up DIFFERENT states and actions to go to.
+
+The thing is, I'm trying to implement Achik's spirit form, and I need a different little physics scheme for that. That's fine and all, but to make a component that I can use on any character I want to make, things are different. Kowi cannot do a spirit form thing like that, so I need to get to some point where I can read common inputs and patterns between the two of them and if the current character has a special state or ability relating to that, handle it.
+
+The current idea I have for this involves a ScriptableObject where I can specify all the routes and stuff like that. A secondary idea is to, depending on the character whose ScriptableObject I'm loading is, create an AchikPlayerState and a KowiPlayerState. This way, I can create connections between states that are more per-character and less generic...
+
+Hmm, I'm not sure, but the latter approach sounds a little easier to implement personally. If I'm so serious about ensuring that Achik and Kowi play differently, then the time spent defining these states and all that stuff is well worth it. For that purpose, I think it is!
+
+It still just makes me think though... The physics, passive abilities, and skills are really the only main differences between the two characters.... No, that's wrong. I'll have to separate them via classes as I said above!
+
+For now, I'll push this commit, then make that next change.
+
+---
+
