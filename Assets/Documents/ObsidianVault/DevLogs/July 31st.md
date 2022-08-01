@@ -68,3 +68,14 @@ For now, I'll push this commit, then make that next change.
 
 ---
 
+So what's REALLY got to change? I know that my PlayerMoveState absolutely should. This is a concrete state that controls how the character (now, only Achik) will move and all that.
+
+I'm still so unsure... something stinks about this approach and I'm not sure what just yet.  I like the generic approach but I think this more specific approach works better... Hmmm............
+
+Let's try this approach and see if anything goes horrifically wrong. At present, it seems the far more flexible way to be able to make my characters feel different (and it is, logically)...
+
+Ok, first, let's create an AchikMoveState, which may or may not be EXACTLY like my PlayerMoveState currently.
+
+I've started by actually separating a GroundStat and an AirState. There may be a wealth of states like a JumpState in between to add the impulse, all that fun stuff, etc, but I think this is the way forwards.
+
+I've started by figuring out how I know whether or not I'm grounded. This might be something as easy as checking the Rigidbody's y velocity combined with a raycast or something like that, or it might not be. I have to coach an Overwatch scrimmage for now though, so I'll get to this when I return.

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float JUMP_FORCE = 5f;
     [Range(1f, 10f)]
     public float GROUNDED_DRAG_FORCE = 2f;
+    public float GROUNDED_CHECK_WIDTH = 0.15f;
 
     [SerializeField]
     private bool m_IsGrounded = true;
@@ -21,7 +22,11 @@ public class PlayerController : MonoBehaviour
     public bool IsFalling { get => m_IsFalling; set => m_IsFalling = value; }
 
     [SerializeField]
-    private int m_NumberJumps = 2;
+    private int m_MaxJumps = 2;
+    public int MaxJumps { get => m_MaxJumps; }
+    
+    [SerializeField]
+    private int m_NumberJumps;
     public int NumberJumps { get => m_NumberJumps; set => m_NumberJumps = value; }
 
     [SerializeField]
@@ -61,6 +66,10 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        m_NumberJumps = m_MaxJumps;
+
+        //
+
         m_FireProjectileScript = GetComponent<FireProjectileScript>();
 
         m_PlayerInput = GetComponent<PlayerInput>();
@@ -74,7 +83,8 @@ public class PlayerController : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
 
-        CurrentState = new PlayerMoveState(this);
+        //CurrentState = new PlayerMoveState(this);
+        CurrentState = new AchikAirState(this);
     }
 
     private void FixedUpdate()
@@ -86,6 +96,25 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
+        var inputVec2 = ctx.ReadValue<Vector2>();
+
+        if (inputVec2 != MovementInput)
+        {
+            // Is our new X input different from our old one AND not zero?
+            if (inputVec2.x != MovementInput.x && inputVec2.x != 0)
+            {
+                SpriteRenderer.flipX = inputVec2.x < 0 && inputVec2 != Vector2.zero;
+            }
+        }
+
+        // Update MovementInput
+        MovementInput = inputVec2;
+
+        // Animator
+        Animator.SetInteger("XInputInt", (int)inputVec2.x);
+        Animator.SetInteger("YInputInt", (int)inputVec2.y);
+
+        // Finally, invoke CurrentState's OnMove
         CurrentState.OnMove(ctx);
     }
 
@@ -115,22 +144,75 @@ public class PlayerController : MonoBehaviour
 
     public void OnSkill(InputAction.CallbackContext ctx)
     {
+        if (!SkillAction.WasPerformedThisFrame()) return;
+
+        // Directional Input?
+        var input = MovementInput;
+
+        if (input.x == 0f && input.y == 0f) // Deadzones are useful here...
+        {
+            // Default Special
+            Debug.Log("Default Special!");
+        }
+        else if (input.x == 0f)
+        {
+            if (input.y > 0)
+            {
+                // UP
+                Debug.Log("Up Special!");
+            }
+            else
+            {
+                // DOWN
+                Debug.Log("Down Special!");
+            }
+        }
+        else if (input.y == 0f)
+        {
+            if (input.x > 0)
+            {
+                // RIGHT
+                Debug.Log("Right Special!");
+            }
+            else
+            {
+                // LEFT
+                Debug.Log("Left Special!");
+            }
+        }
+
+        // Finally, invoke OnSkill or Skill-specific functions in each state.
         CurrentState.OnSkill(ctx);
+    }
+
+    // + + + + | Functions | + + + + 
+
+    public void ChangeState(PlayerState newState)
+    {
+        CurrentState.Exit();
+        CurrentState = newState;
+        CurrentState.Enter();
+    }
+
+    public bool CheckIfValidGroundPoint(Vector2 point)
+    {
+        Vector2 currPosition = new Vector2(transform.position.x, transform.position.y);
+        return point.y < currPosition.y && point.x > currPosition.x - GROUNDED_CHECK_WIDTH && point.x < currPosition.x + GROUNDED_CHECK_WIDTH;
     }
 
     // + + + + | Collision Handling | + + + + 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //
+        CurrentState.OnCollisionEnter2D(collision);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        //
+        CurrentState.OnCollisionStay2D(collision);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        //
+        CurrentState.OnCollisionExit2D(collision);
     }
 }

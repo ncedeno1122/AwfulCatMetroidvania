@@ -5,12 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMoveState : PlayerState
 {
-
-    private Rigidbody2D m_rb2d;
-
     public PlayerMoveState(PlayerController context) : base(context)
     {
-        m_rb2d = context.Rb2d;
     }
 
     public override void Enter()

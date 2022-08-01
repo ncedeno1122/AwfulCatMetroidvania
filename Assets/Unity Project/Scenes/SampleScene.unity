@@ -178,8 +178,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -404653429
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e74fc03ec7d2046cfbe84a47fc845c13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6917,9 +6917,11 @@ MonoBehaviour:
   MOVE_SPEED: 15
   JUMP_FORCE: 5
   GROUNDED_DRAG_FORCE: 2
-  m_IsGrounded: 0
+  GROUNDED_CHECK_WIDTH: 0.15
+  m_IsGrounded: 1
   m_IsFalling: 0
-  m_NumberJumps: 2
+  m_MaxJumps: 2
+  m_NumberJumps: 0
   m_IsInteracting: 0
   m_MovementInput: {x: 0, y: 0}
   m_TouchingInteractableTile: {fileID: 0}
@@ -7282,7 +7284,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -8
   m_Sprite: {fileID: -449089177, guid: d04939751ec4e90459fb22edc594856b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

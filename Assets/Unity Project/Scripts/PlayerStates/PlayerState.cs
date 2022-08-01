@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public abstract class PlayerState
 {
     protected PlayerController m_Context;
+    protected Rigidbody2D m_rb2d;
 
     // Should be able to access InputActions from context
 
@@ -14,6 +15,7 @@ public abstract class PlayerState
     public PlayerState(PlayerController context)
     {
         m_Context = context;
+        m_rb2d = context.Rb2d;
     }
 
     public abstract void Enter();
