@@ -1492,10 +1492,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.001039501
     y: 0
-    width: 1
-    height: 1
+    width: 0.997921
+    height: 0.9981516
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -6631,6 +6631,7 @@ GameObject:
   - component: {fileID: 1602695800}
   - component: {fileID: 1602695802}
   - component: {fileID: 6163553445257701985}
+  - component: {fileID: 6163553445257701986}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6925,6 +6926,21 @@ MonoBehaviour:
   m_IsInteracting: 0
   m_MovementInput: {x: 0, y: 0}
   m_TouchingInteractableTile: {fileID: 0}
+  ActivateAbility1:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6163553445257701986}
+        m_TargetAssemblyTypeName: AchikSpiritFormComponent, Assembly-CSharp
+        m_MethodName: ActivateSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1686324540
 GameObject:
   m_ObjectHideFlags: 0
@@ -7508,3 +7524,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ProjectilePrefab: {fileID: 596484208880901211, guid: 015bdbe6c1d7cb04baf4b16a8e22003a, type: 3}
   m_ProjectileSpawn: {fileID: 1276826464}
+--- !u!114 &6163553445257701986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602695795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47616ba87333c847858cc2d828d5212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillDurationSeconds: 2
+  SpiritFormSpeed: 3
+  SpiritFormSprite: {fileID: 21300000, guid: d6b95fe714c996741b6fd02fc3be0aa0, type: 3}

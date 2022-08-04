@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -63,6 +64,8 @@ public class PlayerController : MonoBehaviour
     private InteractableTile m_TouchingInteractableTile;
 
     public PlayerState CurrentState;
+
+    public UnityEvent ActivateAbility1;
 
     private void Awake()
     {

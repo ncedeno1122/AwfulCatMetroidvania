@@ -9,6 +9,19 @@
         "state": {
           "type": "markdown",
           "state": {
+            "file": "DevLogs/August 4th.md",
+            "mode": "source",
+            "backlinks": false,
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "d2cc64db963fd5a2",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
             "file": "DevLogs/July 31st.md",
             "mode": "source",
             "backlinks": false,
@@ -70,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/July 31st.md",
+                "file": "DevLogs/August 4th.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -78,6 +91,16 @@
                 "searchQuery": "",
                 "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b9b1675fc6def590",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "DevLogs/August 4th.md"
               }
             }
           }
@@ -90,15 +113,15 @@
   },
   "active": "e9425f6d6acb7d3c",
   "lastOpenFiles": [
+    "Notes - Study/Citations & Resources.md",
+    "DevLogs/August 4th.md",
+    "DevLogs/July 31st.md",
     "DevLogs/July 18th.md",
     "DevLogs/July 23rd.md",
-    "DevLogs/July 31st.md",
     "DevLogs/July 30th.md",
     "DevLogs/July 13th.md",
     "DevLogs/July 11th.md",
     "DevLogs/July 6th.md",
-    "Notes - Study/Ideas for Gameplay.md",
-    "Notes - Study/Citations & Resources.md",
-    "DevLogs/July 17th.md"
+    "Notes - Study/Ideas for Gameplay.md"
   ]
 }

@@ -69,7 +69,14 @@ public class AchikAirState : PlayerState
 
     public override void OnSkill(InputAction.CallbackContext ctx)
     {
-        //
+        Debug.Log("OnSkill in Jump!");
+
+        if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.down)) < 15f)
+        {
+            // If we're about pointing down, then
+            Debug.Log("Activating Ability 1!");
+            m_Context.ActivateAbility1?.Invoke();
+        }
     }
 
     //
