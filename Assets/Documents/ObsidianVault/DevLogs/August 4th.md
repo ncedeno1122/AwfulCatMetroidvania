@@ -8,9 +8,9 @@ Right off the bat, I stare into my project and realize the most SILLY, lower-pri
 In any case, I wanted to pick up where I left off. A decent bit of this was retuning a bit of my physics and detecting when I'm grounded and all that. I'm so concerned with performance but I can't preoptimize, in the words of too many Stack Overflow gurus. In any case, I don't care UNLESS I make some sort of wall jump script or something like that. Any addition or ability should be done in a separate script as a component. This is the way.
 
 What's more, I want to make the Achik Spirit Form ability today. Here's the work I need to do because I just learned how to do this:
-- [ ] Make Sprite for Achik's spirit form
+- [x] Make Sprite for Achik's spirit form
 - [x] Make GameObject or Component for his Spirit Form?
-- [ ] Get it working
+- [x] Get it working
 
 There's just some things I need to organize first. Like, I need to keep the main Player GameObject active as I switch the state and all that stuff. Perhaps I only need to override the SpriteRenderer's sprite temporarily. I'll need to do something with the Animator so I don't have any changing sprites or something...
 
@@ -40,3 +40,9 @@ I could hotfix this by raycasting downwards to see if before we deactivate if we
 I could ALSO try lerping the values to reduce some of these errors instead of SNAPPING from one size to another.
 
 The raycast approach seems like the right option, but let me post this commit first.
+
+--- 
+
+And my math worked! It's functional, but it could use some touchups and likely some more debugging down the pipeline as I make more. In any case, MISSION ACCOMPLISHED for now!
+
+Could it use polish? Absolutely. Specifically, some particle effects, maybe a trail renderer with a neat material and a light or something. The transition could absolutely use something FAR BETTER than instantaneously doing it. Some visual feedback would be nice but not too much for too long. 

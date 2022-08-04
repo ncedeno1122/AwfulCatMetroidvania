@@ -71,7 +71,8 @@ public class AchikAirState : PlayerState
     {
         Debug.Log("OnSkill in Jump!");
 
-        if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.down)) < 15f)
+        if (m_Context.MovementInput != Vector2.zero && 
+            Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.down)) < 15f)
         {
             // If we're about pointing down, then
             Debug.Log("Activating Ability 1!");
