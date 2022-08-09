@@ -22,3 +22,18 @@ I COULD control it via the animation system, but... I don't want to rely on that
 
 Really quick, I want to commit this work so I can have it for later.
 
+So yeah, I can basically have it as a GameObject with a component script whose sole duty it is to maintain the size of a Collider and a coroutine and all that, and trigger certain things if something will choose to react to it (done in another script - CollisionListener? IDK).
+
+---
+
+My first approach was to get the majority of the coding out of the way with how I wanted things to lerp and all that, but I have to think more design-wise now. What would be a good way to handle this..?
+
+My little issue is that I want to structure things well. It feels weird and foreign somehow to make some sort of childed GameObject with the increased collider size. There, I *could* just make some script whose stuff I invoke via UnityEvent and stuff like that like usual, but it's the first one that I'm making that would trigger something outside of the GameObject. I may want to activate/deactivate the little collider GameObject which is why I worry about my dear script.
+
+This is easier than I think, actually. I'll make a script on the Player that will handle invoking the action and all that, and then a script that can be deactivatable that handles the collision on the GameObject.
+
+---
+
+Aaaand I've implemented the lot of the code half of it. I've got the expanding collider, all that stuff. Now I just need to implement some sort of script that listens for the interaction and provides functions for when it gets blessed.
+
+Moreover, I have to get some animation on that and have the state interface with the PlayerController state machine and all that. For now, I'll commit this work.

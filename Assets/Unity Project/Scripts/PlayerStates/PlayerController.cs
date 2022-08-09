@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     public PlayerState CurrentState;
 
-    public UnityEvent ActivateAbility1;
+    public UnityEvent ActivateAbility1, ActivateAbility2;
 
     private void Awake()
     {
