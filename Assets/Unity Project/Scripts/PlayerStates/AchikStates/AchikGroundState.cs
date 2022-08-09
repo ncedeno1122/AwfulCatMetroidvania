@@ -72,13 +72,34 @@ public class AchikGroundState : PlayerState
 
     public override void OnSkill(InputAction.CallbackContext ctx)
     {
-        if (m_Context.MovementInput != Vector2.zero &&
-            Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.down)) < 15f)
+        if (m_Context.MovementInput != Vector2.zero)
         {
-            // If we're about pointing down, then
-            Debug.Log("Activating Ability 2!");
-            m_Context.ActivateAbility2?.Invoke();
+            // Up
+            if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.up)) < 15f)
+            {
+                m_Context.GroundedUpSkill?.Invoke();
+            }
+            // Down
+            if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.down)) < 15f)
+            {
+                m_Context.GroundedDownSkill?.Invoke();
+            }
+            // Right
+            if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.right)) < 15f)
+            {
+                m_Context.GroundedRightSkill?.Invoke();
+            }
+            // Left
+            if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.left)) < 15f)
+            {
+                m_Context.GroundedLeftSkill?.Invoke();
+            }
         }
+        else
+        {
+            m_Context.GroundedNeutralSkill?.Invoke();
+        }
+            
     }
 
     // + + + + | Collisions | + + + +

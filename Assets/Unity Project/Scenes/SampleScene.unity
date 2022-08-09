@@ -1492,10 +1492,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.001039501
+    x: 0
     y: 0
-    width: 0.997921
-    height: 0.9981516
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -5975,7 +5975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1023324379
 Transform:
   m_ObjectHideFlags: 0
@@ -11903,22 +11903,13 @@ MonoBehaviour:
   m_IsInteracting: 0
   m_MovementInput: {x: 0, y: 0}
   m_TouchingInteractableTile: {fileID: 0}
-  ActivateAbility1:
+  GroundedNeutralSkill:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6163553445257701986}
-        m_TargetAssemblyTypeName: AchikSpiritFormComponent, Assembly-CSharp
-        m_MethodName: ActivateSkill
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ActivateAbility2:
+      m_Calls: []
+  GroundedUpSkill:
+    m_PersistentCalls:
+      m_Calls: []
+  GroundedDownSkill:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6163553445257701987}
@@ -11933,6 +11924,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  GroundedRightSkill:
+    m_PersistentCalls:
+      m_Calls: []
+  GroundedLeftSkill:
+    m_PersistentCalls:
+      m_Calls: []
+  AirNeutralSkill:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6163553445257701986}
+        m_TargetAssemblyTypeName: AchikSpiritFormComponent, Assembly-CSharp
+        m_MethodName: ActivateSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  AirUpSkill:
+    m_PersistentCalls:
+      m_Calls: []
+  AirDownSkill:
+    m_PersistentCalls:
+      m_Calls: []
+  AirRightSkill:
+    m_PersistentCalls:
+      m_Calls: []
+  AirLeftSkill:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1686324540
 GameObject:
   m_ObjectHideFlags: 0

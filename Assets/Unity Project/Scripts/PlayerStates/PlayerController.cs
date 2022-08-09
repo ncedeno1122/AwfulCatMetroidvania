@@ -65,7 +65,8 @@ public class PlayerController : MonoBehaviour
 
     public PlayerState CurrentState;
 
-    public UnityEvent ActivateAbility1, ActivateAbility2;
+    public UnityEvent GroundedNeutralSkill, GroundedUpSkill, GroundedDownSkill, GroundedRightSkill, GroundedLeftSkill;
+    public UnityEvent AirNeutralSkill, AirUpSkill, AirDownSkill, AirRightSkill, AirLeftSkill;
 
     private void Awake()
     {
@@ -149,42 +150,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!SkillAction.WasPerformedThisFrame()) return;
 
-        // Directional Input?
-        var input = MovementInput;
-
-        if (input.x == 0f && input.y == 0f) // Deadzones are useful here...
-        {
-            // Default Special
-            Debug.Log("Default Special!");
-        }
-        else if (input.x == 0f)
-        {
-            if (input.y > 0)
-            {
-                // UP
-                Debug.Log("Up Special!");
-            }
-            else
-            {
-                // DOWN
-                Debug.Log("Down Special!");
-            }
-        }
-        else if (input.y == 0f)
-        {
-            if (input.x > 0)
-            {
-                // RIGHT
-                Debug.Log("Right Special!");
-            }
-            else
-            {
-                // LEFT
-                Debug.Log("Left Special!");
-            }
-        }
-
-        // Finally, invoke OnSkill or Skill-specific functions in each state.
+        // Invoke OnSkill or Skill-specific functions in each state.
         CurrentState.OnSkill(ctx);
     }
 

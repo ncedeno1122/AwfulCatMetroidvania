@@ -69,14 +69,32 @@ public class AchikAirState : PlayerState
 
     public override void OnSkill(InputAction.CallbackContext ctx)
     {
-        Debug.Log("OnSkill in Jump!");
-
-        if (m_Context.MovementInput != Vector2.zero && 
-            Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.down)) < 15f)
+        if (m_Context.MovementInput != Vector2.zero)
         {
-            // If we're about pointing down, then
-            Debug.Log("Activating Ability 1!");
-            m_Context.ActivateAbility1?.Invoke();
+            // Up
+            if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.up)) < 15f)
+            {
+                m_Context.AirUpSkill?.Invoke();
+            }
+            // Down
+            if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.down)) < 15f)
+            {
+                m_Context.AirDownSkill?.Invoke();
+            }
+            // Right
+            if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.right)) < 15f)
+            {
+                m_Context.AirRightSkill?.Invoke();
+            }
+            // Left
+            if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.left)) < 15f)
+            {
+                m_Context.AirLeftSkill?.Invoke();
+            }
+        }
+        else
+        {
+            m_Context.AirNeutralSkill?.Invoke();
         }
     }
 

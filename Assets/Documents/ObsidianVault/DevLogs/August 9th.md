@@ -47,3 +47,11 @@ I did this SUPER simply since I know I'll want to resprite/animate this later wi
 I wanted to add a little Particle effect to make it look nicer, but because I'm changing the scale it's getting stretched out and weird. Perhaps I'll just change the size of the collider and the sprite renderer. 
 
 Now I've done that, so I'll make a little BlessListener or something to react to my blessing.
+
+---
+
+Yeah uh, I guess I did it. That was... easy. LOL! I rarely ever praise my own ability to get this stuff done. But, I did it at least at a basic level and that's all I should ask for now. Later, I can polish and add a bunch of crazyness, but this is more than okay for now.
+
+I think I need to think about what specials I want for each direction. I can make UnityEvents and name them for each direction and special and grounded/non-grounded ability. This would be a good way to organize things going forwards, that's for sure.
+
+It's a LOT of skills for the Inspector though, so I may have to write a CustomInspector script to make them easier on the eyes.
