@@ -46,3 +46,11 @@ The raycast approach seems like the right option, but let me post this commit fi
 And my math worked! It's functional, but it could use some touchups and likely some more debugging down the pipeline as I make more. In any case, MISSION ACCOMPLISHED for now!
 
 Could it use polish? Absolutely. Specifically, some particle effects, maybe a trail renderer with a neat material and a light or something. The transition could absolutely use something FAR BETTER than instantaneously doing it. Some visual feedback would be nice but not too much for too long. 
+
+There's another bug I noticed with the breakable blocks, which is when I break one and it respawns over me when I'm still in spirit form, and then I need to try to position myself about.
+
+If this happens and I can't compute a solution, I want to try and just return the player to the position they started the spirit form in. That'd be the simplest choice for sure. But detecting this would be more difficult. It'd involve something like doing an OverlapBox or something like that for the size and shape of our collider, and then deciding what we do based on that. There should be some target height that we can accomodate in in-game units.
+
+This check could help determine our collision and the appropriate response for it and everything like that. OR I could make it so that if we CAN'T respawn validly, we start to lose heallth or something like that? But that's for later when I actually implement health, not to mention that I still will have to detect collision more thoroughly.
+
+In the meantime, I have some coaching to do, but I've done good work today. If I don't get back to this today, I will tomorrow. What a great day I've had, I feel blessed!

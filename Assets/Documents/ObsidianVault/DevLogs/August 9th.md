@@ -1,0 +1,24 @@
+Continuing from [[August 6th]]! It's a shame I've not had more time to work on this, I'm splitting time between learning and making a webapp for the company I work for currently. In any case, I still wanted to get some work done here today.
+
+In the last entry, I spent some time ideating and composing some music, even though I didn't write so much about it. In that aspect, I'm still developing an aesthetic sound-wise. I'm finding a better blend of my live instruments with synths and stuff like that which is nice, but there's still work to be done. As well, I've been notating ideas and composing them in Musescore which is nice so I can have them on paper, rather than in Cubase where I can't extract their ideas without actually hopping into the files and finding them all.
+
+In any case, I wanted to think more about some fun ideas like last time for abilities and stuff like that. Perhaps, however, I need to approach these abilities by trying to build a level or something. That way, I can really see what limitations I want to design for. For example, designing by limitations, like I'd said before. What can't we do or break at this moment?
+
+I know that for one of Achik's abilities I wanted him to be able to "Bless" or do something like that. Basically he takes up a prayer stance and creates a little bubble around him that would trigger things. This was inspired by the frequent divinations every time the Incas would break the earth to plant crops for fortune with the harvest and such. This would also be a neat thing to go from one world to another as I want to. Perhaps I'll do that today.
+
+#### Achik: Downwards Thrust with Priest Knife
+IDEA really quick, wouldn't it be fun to give Achik the Zelda II Down Thrust attack in the air with his priest knife? Or something? That'd be fun I think, and a unique thing for him. It also helps with ACTUALLY implementing a knife at all, its short range makes it a hard weapon to try and convey with other moves, potentially.
+
+---
+
+For this, I'd obviously need to implement the state, the animation, and however I plan to create the object/effect for blessing certain objects or something. I'd also need to create some sort of "handler" component to listen for this and trigger some events, kind of like my observer-listener script I had before.
+
+The main thing that I'm concerned with in making these skills is the feedback they'll give for using them, that contributes to the game feel and all that. At least early on, anyway. Would it be more effective to use a little particle effect that I trigger with an OverlapBox or something, OR would it be better to actually have a GameObject with a component script and trigger collider for me to bless with?
+The second option seems more scalable and workable. The best thing is, it can fairly seamlessly integrate with my systems as I've decoupled them so far. That way, many things can bless if I need them to! I think that's the way.
+
+So, making a managed GameObject that will bless and all that is the way to go I think. Should it be a prefab, or something I keep on the player? Hmm...
+
+I COULD control it via the animation system, but... I don't want to rely on that. I'd much rather do it as a state or something rather than that, as I did with the spirit form stuff.
+
+Really quick, I want to commit this work so I can have it for later.
+
