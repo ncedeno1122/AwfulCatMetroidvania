@@ -9,10 +9,9 @@ public class BlessColliderScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) return;
-        else
-        {
-            // If something is listening to being blessed, make it react!
-            // if (collision.gameObject.GetComponent<BlessListener>()) ...
-        }
+        var blessHandler = collision.gameObject.GetComponent<BlessInteractionHandler>();
+        if (blessHandler == null) return;
+
+        blessHandler.HandleBless(); // TODO: Pass in collision and/or this object? Probably no reason to...
     }
 }

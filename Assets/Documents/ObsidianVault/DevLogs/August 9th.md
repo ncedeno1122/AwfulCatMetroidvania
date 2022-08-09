@@ -37,3 +37,13 @@ This is easier than I think, actually. I'll make a script on the Player that wil
 Aaaand I've implemented the lot of the code half of it. I've got the expanding collider, all that stuff. Now I just need to implement some sort of script that listens for the interaction and provides functions for when it gets blessed.
 
 Moreover, I have to get some animation on that and have the state interface with the PlayerController state machine and all that. For now, I'll commit this work.
+
+---
+
+Boom, now I've made an AchikBlessState, so it's animation time.
+
+I did this SUPER simply since I know I'll want to resprite/animate this later with more transition frames and all that. For now, this works, and that's what I want. RAPID prototyping.
+
+I wanted to add a little Particle effect to make it look nicer, but because I'm changing the scale it's getting stretched out and weird. Perhaps I'll just change the size of the collider and the sprite renderer. 
+
+Now I've done that, so I'll make a little BlessListener or something to react to my blessing.
