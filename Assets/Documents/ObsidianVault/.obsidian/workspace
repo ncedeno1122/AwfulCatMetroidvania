@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/August 9th.md",
+            "file": "DevLogs/August 11th.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/August 9th.md",
+                "file": "DevLogs/August 11th.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DevLogs/August 9th.md"
+                "file": "DevLogs/August 11th.md"
               }
             }
           }
@@ -98,17 +98,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "8d988fd385bab58d",
+  "active": "e9425f6d6acb7d3c",
   "lastOpenFiles": [
-    "DevLogs/August 6th.md",
-    "DevLogs/August 9th.md",
-    "DevLogs/July 31st.md",
-    "DevLogs/August 4th.md",
-    "Notes - Study/Citations & Resources.md",
     "DevLogs/July 18th.md",
-    "DevLogs/July 23rd.md",
-    "DevLogs/July 30th.md",
+    "DevLogs/July 14th.md",
     "DevLogs/July 13th.md",
-    "DevLogs/July 11th.md"
+    "DevLogs/July 6th.md",
+    "DevLogs/July 5th.md",
+    "DevLogs/June 29.md",
+    "DevLogs/August 11th.md",
+    "DevLogs/August 9th.md",
+    "DevLogs/August 6th.md",
+    "DevLogs/July 31st.md"
   ]
 }
