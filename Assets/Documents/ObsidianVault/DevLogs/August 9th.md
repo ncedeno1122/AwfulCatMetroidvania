@@ -55,3 +55,19 @@ Yeah uh, I guess I did it. That was... easy. LOL! I rarely ever praise my own ab
 I think I need to think about what specials I want for each direction. I can make UnityEvents and name them for each direction and special and grounded/non-grounded ability. This would be a good way to organize things going forwards, that's for sure.
 
 It's a LOT of skills for the Inspector though, so I may have to write a CustomInspector script to make them easier on the eyes.
+
+---
+
+I'm not sure what I want to do now though... I'm definitely cracking down on this abilities for Achik and all that... but I'm interested in different things too! I want to make music, environments, and all that. As I said, a lot of my difficulties in developing abilities stems from not having a testbed map in one of the pachas to truly see what I need to do and how I need to design and all that in actuality.
+
+#### Planning the Heavens / Hanan Pacha / Realm Above
+I'd need sprites for that though. That's for sure. Sprites for the environment and what I want things to look like in one of the Pachas or just the other worlds. Pacha is a cool word but I don't want to JUST make it an Inca thing with Incan terms and all that.
+
+Kowi is from a Mayan-inspired culture, or more Central American one, and their cosmology is different too. Mostly through a multi-leveled underworld, Xibalba, and a multi-leveled overworld/heavenlike realm of the gods. World trees connect the worlds from what I'd read. This is cool too, because that means I can make different areas that are relevant to different levels of the heavens and all that to blend both mythos' in a neat way. It certainly helps with designing the environment, that's for sure.
+
+In Incan cosmology, I understand Hanan Pacha as being the spiritual realm representing both the heavens and LEGIT space. The stars are up there, with Inti and Mama Quilla, and they're the source of rain and stuff like that.
+
+Combining these two, I get a neat blueprint for an awesome multi-layered / regional map. There are different tiers/levels of this heavenly realm that different gods and deities AND MONSTERS can inhabit. Reading through this Wikipedia source (https://en.wikipedia.org/wiki/Thirteen_Heavens) on some of the Nahua cosmology and 13 Heavens that some of the Mayan cosmologies seem to share. Theres realms of rain, storms, sacrifice, blood, but also COSMIC stuff, fire, and so much more.
+
+Gamifying this, it may imply a progression if I interpret these realms like floors on a building. However, I don't really need to... I can make realms around the same levels but above one another slightly like the different regions of a Metroid map, and that could work.
+

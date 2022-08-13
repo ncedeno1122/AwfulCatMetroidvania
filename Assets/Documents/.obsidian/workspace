@@ -1,34 +1,29 @@
 {
   "main": {
-    "id": "6defa603256b488c",
+    "id": "444fc62f9bb76b23",
     "type": "split",
     "children": [
       {
-        "id": "5130ad769c83586f",
+        "id": "fc1d13258cb73a29",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "DevLogs/August 11th.md",
-            "mode": "source",
-            "backlinks": false,
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "dee19fc87d3552b7",
+    "id": "040f039a15b4c842",
     "type": "split",
     "children": [
       {
-        "id": "2b252586fecf618e",
+        "id": "ffaa1f15e857bbd7",
         "type": "tabs",
         "children": [
           {
-            "id": "ba61c653d609a5b0",
+            "id": "89b7866fa662994f",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -36,7 +31,7 @@
             }
           },
           {
-            "id": "08b66d90558d484e",
+            "id": "6d7d2a1ad0b54eaf",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -49,6 +44,14 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "c4cb7c681817a6ad",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
           }
         ]
       }
@@ -57,20 +60,19 @@
     "width": 300
   },
   "right": {
-    "id": "987ac15e94876a6b",
+    "id": "79e4202bb13c88a8",
     "type": "split",
     "children": [
       {
-        "id": "ea824eca8455343b",
+        "id": "9e141cdd1deb9ea7",
         "type": "tabs",
         "children": [
           {
-            "id": "bd464f04be2375fc",
+            "id": "b2e9bbd4b7aca41c",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/August 11th.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -82,13 +84,33 @@
             }
           },
           {
-            "id": "5eb68adbc0b4be2f",
+            "id": "a8483f5233bd781e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3f69926133f259e0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1fbefdcb791f310e",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "DevLogs/August 11th.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -98,6 +120,6 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "5130ad769c83586f",
+  "active": "fc1d13258cb73a29",
   "lastOpenFiles": []
 }
