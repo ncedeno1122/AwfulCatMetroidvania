@@ -3,6 +3,9 @@ Continuing from [[August 9th]].
 I need to think more and more about these abilities and things like that. It's really important that I make a bunch of different, decoupled ideas for this Metroidvania for passive abilities and skills and things like that. Then, I can start plugging them in and all that stuff, but the first step is classifying the many that I think up. Perhaps this note will be a repository of possible ability ideas and thingsl ike that.
 
 #### Skills & Passive Abilities
+
+^9954bb
+
 - ***Passive Abilities***
 	- Movement Enhancing
 		- Air-Time
