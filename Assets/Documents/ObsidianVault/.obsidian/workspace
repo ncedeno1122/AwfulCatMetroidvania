@@ -6,11 +6,10 @@
       {
         "id": "5130ad769c83586f",
         "type": "leaf",
-        "dimension": 50.06410256410256,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/August 14th.md",
+            "file": "DevLogs/August 20th.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -18,13 +17,12 @@
         }
       },
       {
-        "id": "e17283052e8fe581",
+        "id": "6a2b89daa77277a4",
         "type": "leaf",
-        "dimension": 49.93589743589744,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/August 11th.md",
+            "file": "The World/Characters/Achik.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/August 14th.md",
+                "file": "DevLogs/August 20th.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DevLogs/August 14th.md"
+                "file": "DevLogs/August 20th.md"
               }
             }
           }
@@ -115,7 +113,9 @@
   },
   "active": "5130ad769c83586f",
   "lastOpenFiles": [
-    "DevLogs/August 11th.md",
-    "DevLogs/August 14th.md"
+    "The World/Characters/Achik.md",
+    "DevLogs/August 20th.md",
+    "DevLogs/August 14th.md",
+    "DevLogs/August 11th.md"
   ]
 }
