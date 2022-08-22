@@ -57,3 +57,28 @@ What if I had an ability where I could THROW Achik's knife in a direction (costi
 ---
 
 In any case, I'll iterate on these ideas again soon, likely tomorrow. I'm excited, this Attiniy resource really helps me limit my scope and work around the idea.
+
+So from some of my work in [[Achik]], I've decided that **there are two move inputs, one for Basic attacks and the other for Skills**, and I've decided on the limited moveset that Achik will have with such an action. I think I want to have Achik able to toss his knife to add more relevance to it as a real tool of Achik's and not JUST his fallback. It's important to his duties! Other spells can be more generic bomb-like detonation things, projectiles, blasts, hitscan abilities, and other fun stuff. But not so much weapons outside of his knife.
+
+I've decided on making the Knife Throw and Pull Back Knife skills real and all for Achik, which should be fun. It may be physical, but I can't shy away from *enhancing Achik's physicality through his magic/Attiniy*, which I had said earlier. This ability seems to do this well and in an understated manner.
+
+I might make the downwards stab move as well.
+
+Y'know I hadn't considered that this knife throw mechanic, which I intend to be free-aim, would put my current firing system in jeopardy. However, since I planned to "uproot" it anyways, this is a good thing.
+	First things first it would be useful to make a component that helps specify a direction based on the stick input of where exactly we're going to aim and provide a Vector2 of that angle (and draw a graphic for the specified direction).
+	Secondly, I'd need to create states for the free-aiming mode and find a way to choose what I want to shoot. Could I do it as a SingleTap versus DoubleTap input? Sure! Would it be more friendly to have that on a shoulder button (right for energy ball, left for knife)? Maybe also!
+
+OKAY, so I think I figured out a decent scheme for things for now. I'd moved the Bless and Spirit Form skills to an Up input since I didn't use that MUCH so far. I instead have the Horizontal / Any skills like the Knife Throw and Energy Ball separated by different inputs currently (Single versus Double) **WHILE a FreeAim mode is active.**
+
+Honestly  I think this is the way going forwards, and what I'm really looking forwards to implementing next.
+
+---
+
+I'm thinking of fun stuff to do before I head to bed. Maybe evaporating water? Growing crops? Setting things on fire? Blinding enemies?
+
+I still also need more abilities for the Up/Down directions potentially, introducing the FreeAiming system kinda messed with that so far. I have to think more about what other abilities I might want to introduce that's in line with Achik's character. I want to think about, again, how to interact with the environment and I have some neat abilities already that could do things.
+For instance, I could copy right out of God of War's book with the knife throwing abilities and all that. What's more, I could destroy blocks that could melt or burn wtih the Solar Beam ability I just wrote up.
+
+#### Abilities That Depend On the Knife's State?
+**I could make abilities DEPENDENT on Achik's knife as well!!** That'd be really cool if he used it as a catalyst for things. If the knife was OUT, he couldn't use certain abilities and what not. Certainly food for thought. 
+
