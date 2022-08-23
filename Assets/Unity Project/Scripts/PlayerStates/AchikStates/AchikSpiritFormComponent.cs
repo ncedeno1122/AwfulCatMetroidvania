@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class AchikSpiritFormComponent : MonoBehaviour
+public class AchikSpiritFormComponent : MonoBehaviour, ISkill, IResourceSkill<float>
 {
     // Range?
     public float SkillDurationSeconds = 1.5f;
@@ -12,6 +12,13 @@ public class AchikSpiritFormComponent : MonoBehaviour
     private Vector2 m_NewColliderDimensions = new Vector2(0.5f, 0.5f);
     private Vector2 m_OldColliderOffset;
     private Vector2 m_NewColliderOffset = Vector2.zero;
+
+    // IResourceSkill
+    public ResourceType ResourceType => ResourceType.ATTINIY;
+
+    [SerializeField]
+    private float m_InitialSkillCost = 5f;
+    public float SkillCost { get => m_InitialSkillCost; }
 
     private PlayerController m_PlayerController;
     private SpriteRenderer m_SpriteRenderer;
@@ -75,7 +82,11 @@ public class AchikSpiritFormComponent : MonoBehaviour
         {
             m_PlayerController.ChangeState(new AchikAirState(m_PlayerController));
         }
+    }
 
+    public bool HasEnoughResource(float userResourceAmount)
+    {
+        return userResourceAmount <= SkillCost;
     }
 
     private IEnumerator SkillDurationCRT(float duration)

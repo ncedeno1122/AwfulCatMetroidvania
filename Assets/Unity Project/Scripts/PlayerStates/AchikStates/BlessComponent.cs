@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class BlessComponent : MonoBehaviour
+public class BlessComponent : MonoBehaviour, ISkill
 {
     public const float BLESSING_TIME = 0.5f;
 

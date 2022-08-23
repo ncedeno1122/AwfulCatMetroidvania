@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/August 22st.md",
+            "file": "DevLogs/August 23rd.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/August 22st.md",
+                "file": "DevLogs/August 23rd.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DevLogs/August 22st.md"
+                "file": "DevLogs/August 23rd.md"
               }
             }
           }
@@ -113,8 +113,8 @@
   },
   "active": "5130ad769c83586f",
   "lastOpenFiles": [
-    "DevLogs/August 21st.md",
     "DevLogs/August 22st.md",
+    "DevLogs/August 21st.md",
     "The World/Characters/Achik.md",
     "DevLogs/August 14th.md",
     "DevLogs/August 11th.md"
