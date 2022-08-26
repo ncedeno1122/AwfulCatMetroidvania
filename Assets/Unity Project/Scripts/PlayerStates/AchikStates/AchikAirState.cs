@@ -69,33 +69,40 @@ public class AchikAirState : PlayerState
 
     public override void OnSkill(InputAction.CallbackContext ctx)
     {
+        SkillInput skillInput = new SkillInput();
+
         if (m_Context.MovementInput != Vector2.zero)
         {
             // Up
             if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.up)) < 15f)
             {
-                m_Context.AirUpSkill?.Invoke();
+                skillInput.direction = MoveInputDirection.UP;
             }
             // Down
             if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.down)) < 15f)
             {
-                m_Context.AirDownSkill?.Invoke();
+                skillInput.direction = MoveInputDirection.DOWN;
             }
             // Right
             if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.right)) < 15f)
             {
-                m_Context.AirRightSkill?.Invoke();
+                skillInput.direction = MoveInputDirection.HORIZONTAL;
             }
             // Left
             if (Mathf.Abs(Vector2.Angle(m_Context.MovementInput.normalized, Vector2.left)) < 15f)
             {
-                m_Context.AirLeftSkill?.Invoke();
+                skillInput.direction = MoveInputDirection.HORIZONTAL;
             }
         }
         else
         {
-            m_Context.AirNeutralSkill?.Invoke();
+            skillInput.direction = MoveInputDirection.NEUTRAL;
         }
+
+        // To AchikComponent's HandleInput
+        skillInput.activationType = InputActivationType.SINGLETAP;
+        skillInput.isGrounded = m_Context.IsGrounded;
+        m_Context.AchikComponent.HandleInput(skillInput);
     }
 
     //

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [Range(1f, 10f)]
     public float GROUNDED_DRAG_FORCE = 2f;
     public float GROUNDED_CHECK_WIDTH = 0.15f;
+    public const float MOVEINPUT_THRESHOLD = 0.01f;
 
     [SerializeField]
     private bool m_IsGrounded = true;
@@ -65,8 +66,10 @@ public class PlayerController : MonoBehaviour
 
     public PlayerState CurrentState;
 
-    public UnityEvent GroundedNeutralSkill, GroundedUpSkill, GroundedDownSkill, GroundedRightSkill, GroundedLeftSkill;
-    public UnityEvent AirNeutralSkill, AirUpSkill, AirDownSkill, AirRightSkill, AirLeftSkill;
+    //public UnityEvent GroundedNeutralSkill, GroundedUpSkill, GroundedDownSkill, GroundedRightSkill, GroundedLeftSkill;
+    //public UnityEvent AirNeutralSkill, AirUpSkill, AirDownSkill, AirRightSkill, AirLeftSkill;
+
+    public AchikComponent AchikComponent;
 
     private void Awake()
     {
@@ -86,6 +89,7 @@ public class PlayerController : MonoBehaviour
         m_rb2d = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        AchikComponent = GetComponent<AchikComponent>(); // TODO: Make interface type OR abstract superclass
 
         //CurrentState = new PlayerMoveState(this);
         CurrentState = new AchikAirState(this);
@@ -152,6 +156,10 @@ public class PlayerController : MonoBehaviour
 
         // Invoke OnSkill or Skill-specific functions in each state.
         CurrentState.OnSkill(ctx);
+
+        //
+        SkillInput skillInput = new SkillInput(FindInputDirection(MovementInput), InputActivationType.SINGLETAP, IsGrounded);
+        AchikComponent.HandleInput(skillInput);
     }
 
     // + + + + | Functions | + + + + 
@@ -167,6 +175,31 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 currPosition = new Vector2(transform.position.x, transform.position.y);
         return point.y < currPosition.y && point.x > currPosition.x - GROUNDED_CHECK_WIDTH && point.x < currPosition.x + GROUNDED_CHECK_WIDTH;
+    }
+
+    protected virtual void InitializeOnAwake()
+    {
+        //
+    }
+
+    private MoveInputDirection FindInputDirection(Vector2 moveInput)
+    {
+        if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
+        {
+            return MoveInputDirection.HORIZONTAL;
+        }
+        else if (moveInput.y > MOVEINPUT_THRESHOLD)
+        {
+            return MoveInputDirection.UP;
+        }
+        else if (moveInput.y < -MOVEINPUT_THRESHOLD)
+        {
+            return MoveInputDirection.DOWN;
+        }
+        else
+        {
+            return MoveInputDirection.NEUTRAL;
+        }
     }
 
     // + + + + | Collision Handling | + + + + 

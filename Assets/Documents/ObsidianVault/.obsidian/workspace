@@ -4,25 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "5130ad769c83586f",
+        "id": "033316d26308f878",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/August 23rd.md",
-            "mode": "source",
-            "backlinks": false,
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "6a2b89daa77277a4",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "The World/Characters/Achik.md",
+            "file": "DevLogs/August 26th.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -83,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/August 23rd.md",
+                "file": "DevLogs/August 26th.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DevLogs/August 23rd.md"
+                "file": "DevLogs/August 26th.md"
               }
             }
           }
@@ -111,12 +98,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "5130ad769c83586f",
+  "active": "033316d26308f878",
   "lastOpenFiles": [
-    "DevLogs/August 22st.md",
-    "DevLogs/August 21st.md",
+    "DevLogs/August 26th.md",
+    "DevLogs/August 6th.md",
+    "DevLogs/July 15th.md",
+    "9.md",
+    "DevLogs/July 18th.md",
+    "DevLogs/August 22nd.md",
+    "DevLogs/August 23rd.md",
+    "DevLogs/August 25th.md",
     "The World/Characters/Achik.md",
-    "DevLogs/August 14th.md",
-    "DevLogs/August 11th.md"
+    "DevLogs/August 14th.md"
   ]
 }

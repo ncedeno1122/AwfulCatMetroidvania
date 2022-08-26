@@ -1,4 +1,4 @@
-Continuing from [[August 6th]]! And oh boy, I'm so glad things are working out so far. Yesterday I was out with my family seeing Spongebob: The Musical and it was pretty good. It reminded me so much of how much I like presenting entertainment and things like that and making stuff. It also made me think so much about some fun tricks that theatres and stage plays like that use to achieve certain effects. Like lighting, music cues, expressions, and much more.
+Continuing from [[August 4th]]! And oh boy, I'm so glad things are working out so far. Yesterday I was out with my family seeing Spongebob: The Musical and it was pretty good. It reminded me so much of how much I like presenting entertainment and things like that and making stuff. It also made me think so much about some fun tricks that theatres and stage plays like that use to achieve certain effects. Like lighting, music cues, expressions, and much more.
 
 --- 
 

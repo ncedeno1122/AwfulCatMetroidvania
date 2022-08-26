@@ -1,3 +1,4 @@
+Continuing from [[July 17th]]!
 LITERALLY cutting it so close before I teach my 6pm class, BUT I'm reading this Ecuadorian Quechua dictionary with translations in Spanish AND English and interpretation [[Citations & Resources#^d71fd9]] and I MIGHT go with the name "Acha", shortened from the work "Acharina" for faith for my now-named "Gilberto". The root of Ach- has a lot to do with different things that are key to a lot of other words. Perhaps we can reflect this in Acha's character.
 
 ---

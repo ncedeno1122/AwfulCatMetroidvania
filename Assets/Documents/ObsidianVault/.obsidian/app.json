@@ -3,5 +3,7 @@
   "showLineNumber": false,
   "rightToLeft": false,
   "spellcheck": false,
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false
 }
