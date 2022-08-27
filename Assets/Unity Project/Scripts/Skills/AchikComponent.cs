@@ -3,20 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MoveInputDirection
-{
-    UP = 0,
-    HORIZONTAL = 1,
-    DOWN = 2,
-    NEUTRAL = 3,
-}
-
-public enum InputActivationType
-{
-    SINGLETAP = 0,
-    DOUBLETAP = 1,
-}
-
 /// <summary>
 /// Describes the input for a Skill to be activated!
 /// </summary>
