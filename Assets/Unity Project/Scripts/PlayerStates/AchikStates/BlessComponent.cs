@@ -18,6 +18,9 @@ public class BlessComponent : MonoBehaviour, ISkill
     private PlayerController m_PlayerController;
     private ParticleSystem m_Particle;
 
+    private bool m_IsComplete = true;
+    public bool IsComplete => m_IsComplete;
+
     private void Awake()
     {
         m_PlayerController = GetComponent<PlayerController>();
@@ -52,9 +55,13 @@ public class BlessComponent : MonoBehaviour, ISkill
 
     public void ActivateSkill()
     {
+        if (!m_PlayerController.TryChangeState(new AchikBlessState(m_PlayerController, this))) return;
+
         // Activate & Start CRT
+        m_IsComplete = false;
+
         //Debug.Log("Activating Skill: BlessComponent!");
-        m_PlayerController.ChangeState(new AchikBlessState(m_PlayerController));
+        //m_PlayerController.TryChangeState(new AchikBlessState(m_PlayerController, this));
         
         m_BlessColliderScript.gameObject.SetActive(true);
         //if ((Vector2)m_BlessTf.localScale != m_InitialScale) m_BlessTf.localScale = m_InitialScale;
@@ -77,6 +84,9 @@ public class BlessComponent : MonoBehaviour, ISkill
 
         m_BlessColliderScript.gameObject.SetActive(false);
 
-        m_PlayerController.ChangeState(new AchikGroundState(m_PlayerController));
+        // Complete
+        m_IsComplete = true;
+
+        m_PlayerController.TryChangeState(new AchikGroundState(m_PlayerController));
     }
 }

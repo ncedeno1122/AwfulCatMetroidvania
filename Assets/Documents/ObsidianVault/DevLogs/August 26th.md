@@ -43,7 +43,8 @@ That said though the last error I was aiming to fix remains in which we activate
 
 I wish there was a way for me to make states for the skill components recognizable, like an interface or superclass thing or something... I feel like that card may be overplayed for me though (even if it works). I need to look for more ways to relate classes than this...
 
-#### Component States working with Components 
+#### Skill States working with Components 
 But yeah, I think I could make ISkill into an abstract class with the EXCUSE that there's a boolean that specifies when the action is happening or not. Perhaps the STATES can take in that component in their constructor and HELP with that??? That might be REALLY COOL!
 
 This is something I'm looking to implement next for SURE now that I've gotten my Interaction knowledge somewhat more solidified. In any case, that's all for today. Tomorrow, I'm going to eat at this one great buffet that I like to FUEL my brain for more awesome stuff like this. Onwards and upwards!
+

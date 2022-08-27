@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class AchikSpiritFormState : PlayerState
+public class AchikSpiritFormState : SkillState
 {
     private readonly float SpiritFormSpeed;
 
-    public AchikSpiritFormState(PlayerController context, float spiritFormSpeed) : base(context)
+    public AchikSpiritFormState(PlayerController context, float spiritFormSpeed, AchikSpiritFormComponent spiritFormComponent) : base(context, spiritFormComponent)
     {
         SpiritFormSpeed = spiritFormSpeed;
+        this.skillComponent = spiritFormComponent;
     }
 
     public override void Enter()

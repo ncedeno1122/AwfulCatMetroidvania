@@ -170,11 +170,34 @@ public class PlayerController : MonoBehaviour
 
     // + + + + | Functions | + + + + 
 
-    public void ChangeState(PlayerState newState)
+    public bool TryChangeState(PlayerState newState)
     {
+        if (!CanChangeState(newState)) return false;
+
+        // If not a SkillState or if the SkillState is complete, change states without a hitch!
         CurrentState.Exit();
         CurrentState = newState;
         CurrentState.Enter();
+        return true;
+    }
+
+    public bool CanChangeState(PlayerState newState)
+    {
+        // Is the current SkillState complete BEFORE we switch to the new one?
+        // TODO: Consider getting hurt during animations : override this for a hurt state
+        if (CurrentState is SkillState)
+        {
+            var currentSkillState = CurrentState as SkillState;
+            if (!currentSkillState.IsSkillComplete)
+            {
+                // Cannot complete
+                Debug.LogWarning($"!! - Couldn't switch state from {currentSkillState} to {newState} - {currentSkillState} was not complete!");
+                return false;
+            }
+            return true;
+        }
+
+        return true;
     }
 
     public bool CheckIfValidGroundPoint(Vector2 point)

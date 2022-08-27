@@ -20,6 +20,9 @@ public class AchikSpiritFormComponent : MonoBehaviour, ISkill, IResourceSkill<fl
     private float m_InitialSkillCost = 5f;
     public float SkillCost { get => m_InitialSkillCost; }
 
+    private bool m_IsComplete = true;
+    public bool IsComplete => m_IsComplete;
+
     private PlayerController m_PlayerController;
     private SpriteRenderer m_SpriteRenderer;
     private Animator m_Animator;
@@ -41,7 +44,12 @@ public class AchikSpiritFormComponent : MonoBehaviour, ISkill, IResourceSkill<fl
 
     public void ActivateSkill()
     {
+        if (!m_PlayerController.TryChangeState(new AchikSpiritFormState(m_PlayerController, SpiritFormSpeed, this))) return;
+
         Debug.Log("Activating Spirit Form!");
+
+        // Complete
+        m_IsComplete = false;
 
         // Animator
         m_Animator.SetBool("SpiritFormActive", true);
@@ -52,7 +60,7 @@ public class AchikSpiritFormComponent : MonoBehaviour, ISkill, IResourceSkill<fl
         m_BoxCollider2D.edgeRadius = 0f;
 
         // Change State
-        m_PlayerController.ChangeState(new AchikSpiritFormState(m_PlayerController, SpiritFormSpeed));
+        //m_PlayerController.TryChangeState(new AchikSpiritFormState(m_PlayerController, SpiritFormSpeed, this));
 
         // Start CRT!
         StartCoroutine(SkillDurationCRT(SkillDurationSeconds));
@@ -73,14 +81,17 @@ public class AchikSpiritFormComponent : MonoBehaviour, ISkill, IResourceSkill<fl
         m_BoxCollider2D.offset = m_OldColliderOffset;
         m_BoxCollider2D.edgeRadius = 0.1f;
 
+        // Complete
+        m_IsComplete = true;
+
         // Restore State
         if (m_PlayerController.IsGrounded)
         {
-            m_PlayerController.ChangeState(new AchikGroundState(m_PlayerController));
+            m_PlayerController.TryChangeState(new AchikGroundState(m_PlayerController));
         }
         else
         {
-            m_PlayerController.ChangeState(new AchikAirState(m_PlayerController));
+            m_PlayerController.TryChangeState(new AchikAirState(m_PlayerController));
         }
     }
 

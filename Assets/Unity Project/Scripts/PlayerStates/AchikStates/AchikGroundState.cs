@@ -29,7 +29,7 @@ public class AchikGroundState : PlayerState
     {
         m_Context.IsGrounded = Mathf.Abs(m_rb2d.velocity.y) <= 0.05f; // Some small number
 
-        if (!m_Context.IsGrounded) m_Context.ChangeState(new AchikAirState(m_Context));
+        if (!m_Context.IsGrounded) m_Context.TryChangeState(new AchikAirState(m_Context));
         else
         {
             // Move
@@ -62,7 +62,7 @@ public class AchikGroundState : PlayerState
 
     public override void OnJump(InputAction.CallbackContext ctx)
     {
-        if (m_Context.JumpAction.WasPerformedThisFrame()) m_Context.ChangeState(new AchikJumpState(m_Context));
+        if (m_Context.JumpAction.WasPerformedThisFrame()) m_Context.TryChangeState(new AchikJumpState(m_Context));
     }
 
     public override void OnMove(InputAction.CallbackContext ctx)

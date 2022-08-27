@@ -24,13 +24,13 @@ public class AchikJumpState : PlayerState
             m_Context.IsFalling = false;
             m_Context.Animator.SetBool("IsFalling", false);
 
-            m_Context.ChangeState(new AchikAirState(m_Context));
+            m_Context.TryChangeState(new AchikAirState(m_Context));
         }
         else
         {
             // If not, return to normal state.
             PlayerState nextState = (m_Context.IsGrounded) ? new AchikGroundState(m_Context) : new AchikAirState(m_Context);
-            m_Context.ChangeState(nextState);
+            m_Context.TryChangeState(nextState);
         }
     }
 

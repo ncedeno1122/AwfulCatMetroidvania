@@ -59,7 +59,7 @@ public class AchikAirState : PlayerState
 
     public override void OnJump(InputAction.CallbackContext ctx)
     {
-        if (m_Context.JumpAction.WasPressedThisFrame()) m_Context.ChangeState(new AchikJumpState(m_Context));
+        if (m_Context.JumpAction.WasPressedThisFrame()) m_Context.TryChangeState(new AchikJumpState(m_Context));
     }
 
     public override void OnMove(InputAction.CallbackContext ctx)
@@ -128,7 +128,7 @@ public class AchikAirState : PlayerState
                 {
                     // Land!
                     Debug.Log($"Landed for contact point {currContact.point} | Diff: {(Vector2)m_Context.transform.position - currContact.point}!");
-                    m_Context.ChangeState(new AchikGroundState(m_Context));
+                    m_Context.TryChangeState(new AchikGroundState(m_Context));
                 }
             }
         }

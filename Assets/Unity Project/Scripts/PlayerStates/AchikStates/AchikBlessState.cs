@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class AchikBlessState : PlayerState
+public class AchikBlessState : SkillState
 {
-    public AchikBlessState(PlayerController context) : base(context)
+    public AchikBlessState(PlayerController context, BlessComponent blessComponent) : base(context, blessComponent)
     {
+        this.skillComponent = blessComponent;
     }
 
     public override void Enter()
