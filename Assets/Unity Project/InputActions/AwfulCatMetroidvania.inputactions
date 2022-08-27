@@ -47,7 +47,16 @@
                     "id": "2d921058-b1e5-4261-8900-ba496e2849fb",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkillDoubleTap",
+                    "type": "Button",
+                    "id": "bc8a0750-2ce2-4774-be63-cd3790a2cd7a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap",
                     "initialStateCheck": false
                 }
             ],
@@ -258,6 +267,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Skill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bcd55df7-1967-4368-821f-5b5aeb320d06",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SkillDoubleTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be939a7e-9296-4aaa-b14a-663a9bf164c3",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SkillDoubleTap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

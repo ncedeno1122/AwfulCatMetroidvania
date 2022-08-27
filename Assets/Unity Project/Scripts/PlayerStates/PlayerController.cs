@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class PlayerController : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class PlayerController : MonoBehaviour
     public InputAction InteractAction { get => m_InteractAction;}
     private InputAction m_SkillAction;
     public InputAction SkillAction { get => m_SkillAction; }
+    private InputAction m_SkillActionDoubleTap;
+    public InputAction SkillActionDoubleTap { get => m_SkillActionDoubleTap; }
 
     private Rigidbody2D m_rb2d;
     public Rigidbody2D Rb2d { get => m_rb2d; }
@@ -65,9 +68,6 @@ public class PlayerController : MonoBehaviour
     private InteractableTile m_TouchingInteractableTile;
 
     public PlayerState CurrentState;
-
-    //public UnityEvent GroundedNeutralSkill, GroundedUpSkill, GroundedDownSkill, GroundedRightSkill, GroundedLeftSkill;
-    //public UnityEvent AirNeutralSkill, AirUpSkill, AirDownSkill, AirRightSkill, AirLeftSkill;
 
     public AchikComponent AchikComponent;
 
@@ -85,14 +85,17 @@ public class PlayerController : MonoBehaviour
         m_FireAction = m_PlayerInput.actions["Fire"];
         m_InteractAction = m_PlayerInput.actions["Interact"];
         m_SkillAction = m_PlayerInput.actions["Skill"];
+        m_SkillActionDoubleTap = m_PlayerInput.actions["SkillDoubleTap"];
 
         m_rb2d = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         AchikComponent = GetComponent<AchikComponent>(); // TODO: Make interface type OR abstract superclass
 
-        //CurrentState = new PlayerMoveState(this);
         CurrentState = new AchikAirState(this);
+
+        // Multitap
+        m_SkillActionDoubleTap.performed += act => AchikComponent.HandleInput(CreateSkillInput(true));
     }
 
     private void FixedUpdate()
@@ -150,16 +153,19 @@ public class PlayerController : MonoBehaviour
         CurrentState.OnInteract(ctx);
     }
 
-    public void OnSkill(InputAction.CallbackContext ctx)
+    public void OnSkillTap(InputAction.CallbackContext ctx)
     {
-        if (!SkillAction.WasPerformedThisFrame()) return;
+        // SingleTap
+        if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(false));
 
         // Invoke OnSkill or Skill-specific functions in each state.
-        CurrentState.OnSkill(ctx);
+        //CurrentState.OnSkill(ctx);
+    }
 
-        //
-        SkillInput skillInput = new SkillInput(FindInputDirection(MovementInput), InputActivationType.SINGLETAP, IsGrounded);
-        AchikComponent.HandleInput(skillInput);
+    public void OnSkillDoubleTap(InputAction.CallbackContext ctx)
+    {
+        // DoubleTap
+        if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(true));
     }
 
     // + + + + | Functions | + + + + 
@@ -200,6 +206,12 @@ public class PlayerController : MonoBehaviour
         {
             return MoveInputDirection.NEUTRAL;
         }
+    }
+
+    private SkillInput CreateSkillInput(bool isDoubleTap)
+    {
+        if (isDoubleTap) return new SkillInput(FindInputDirection(MovementInput), InputActivationType.DOUBLETAP, IsGrounded);
+        else return new SkillInput(FindInputDirection(MovementInput), InputActivationType.SINGLETAP, IsGrounded);
     }
 
     // + + + + | Collision Handling | + + + + 
