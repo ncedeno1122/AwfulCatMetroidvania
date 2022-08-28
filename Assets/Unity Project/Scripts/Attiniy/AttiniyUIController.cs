@@ -15,11 +15,13 @@ public class AttiniyUIController : MonoBehaviour
     private void Awake()
     {
         // JUST to initialize, the AttiniyComponent script will update this initially.
-        AttiniySlider.value = MAX_ATTINIY_AMOUNT;
         AttiniySlider.maxValue = MAX_ATTINIY_AMOUNT;
+        AttiniySlider.value = MAX_ATTINIY_AMOUNT;
     }
 
     // + + + + | Functions | + + + + 
+
+    public void UpdateSliderNoAnim(float newAmount) => AttiniySlider.value = newAmount;
 
     public void UpdateSlider(float newAmount) => AnimateAmount(AttiniySlider.value, newAmount);
 

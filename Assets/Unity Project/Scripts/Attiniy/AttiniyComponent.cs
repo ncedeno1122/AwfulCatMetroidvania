@@ -37,13 +37,29 @@ public class AttiniyComponent : MonoBehaviour
         m_CurrAmount = newAmount;
     }
 
-    public void IncreaseAmountBy(float delta)
+    public void IncreaseAmountBy(float delta, bool animate)
     {
+        if (animate && m_CurrAmount != 100f)
+        {
+            AttiniyUIController.UpdateSlider(m_CurrAmount, m_CurrAmount + delta);
+        }
+        else
+        {
+            AttiniyUIController.UpdateSliderNoAnim(m_CurrAmount + delta);
+        }
         m_CurrAmount = (m_CurrAmount + delta >= 100f) ? 100f : m_CurrAmount + delta;
     }
 
-    public void DecreaseAmountBy(float delta)
+    public void DecreaseAmountBy(float delta, bool animate)
     {
+        if (animate && m_CurrAmount != 0f)
+        {
+            AttiniyUIController.UpdateSlider(m_CurrAmount, m_CurrAmount - delta);
+        }
+        else
+        {
+            AttiniyUIController.UpdateSliderNoAnim(m_CurrAmount - delta);
+        }
         m_CurrAmount = (m_CurrAmount - delta <= 0f) ? 0f : m_CurrAmount - delta;
     }
 }

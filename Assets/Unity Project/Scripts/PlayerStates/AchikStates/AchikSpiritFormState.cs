@@ -27,7 +27,12 @@ public class AchikSpiritFormState : SkillState
 
     public override void OnFixedUpdate()
     {
-        m_rb2d.MovePosition(m_rb2d.position + (m_Context.MovementInput * (SpiritFormSpeed * Time.deltaTime)));
+        if (m_Context.AchikComponent.AttiniyComponent.CurrAmount > 0f)
+        {
+            m_rb2d.MovePosition(m_rb2d.position + (m_Context.MovementInput * (SpiritFormSpeed * Time.deltaTime)));
+
+            m_Context.AchikComponent.AttiniyComponent.DecreaseAmountBy(10f * Time.fixedDeltaTime, false);
+        }
     }
 
     //

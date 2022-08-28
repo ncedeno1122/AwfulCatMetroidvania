@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PrayState : SkillState
 {
-    public float AttiniyRegenerationRate = 1.5f;
+    public float AttiniyRegenerationRate = 5f;
 
     public PrayState(PlayerController context, PrayComponent blessComponent) : base(context, blessComponent)
     {
@@ -35,7 +35,7 @@ public class PrayState : SkillState
         }
 
         // Otherwise, increase Attiniy.
-        m_Context.AchikComponent.AttiniyComponent.IncreaseAmountBy(AttiniyRegenerationRate);
+        m_Context.AchikComponent.AttiniyComponent.IncreaseAmountBy(AttiniyRegenerationRate * Time.fixedDeltaTime, false);
     }
 
     //

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class BlessComponent : MonoBehaviour, ISkill
+public class BlessComponent : MonoBehaviour, ISkill, IResourceSkill<float>
 {
     public const float BLESSING_TIME = 0.5f;
 
@@ -20,6 +20,11 @@ public class BlessComponent : MonoBehaviour, ISkill
 
     private bool m_IsComplete = true;
     public bool IsComplete => m_IsComplete;
+
+    public ResourceType ResourceType => ResourceType.ATTINIY;
+
+    private float m_SkillCost = 10f;
+    public float SkillCost => m_SkillCost;
 
     private void Awake()
     {
@@ -57,6 +62,9 @@ public class BlessComponent : MonoBehaviour, ISkill
     {
         if (!m_PlayerController.TryChangeState(new AchikBlessState(m_PlayerController, this))) return;
 
+        // Reduce Attiniy
+        m_PlayerController.AchikComponent.AttiniyComponent.DecreaseAmountBy(SkillCost, true);
+
         // Activate & Start CRT
         m_IsComplete = false;
 
@@ -88,5 +96,10 @@ public class BlessComponent : MonoBehaviour, ISkill
         m_IsComplete = true;
 
         m_PlayerController.TryChangeState(new AchikGroundState(m_PlayerController));
+    }
+
+    public bool HasEnoughResource(float userResourceAmount)
+    {
+        return m_PlayerController.AchikComponent.AttiniyComponent.CurrAmount > userResourceAmount; // TODO: Function may be better served virtually in abstract class...
     }
 }

@@ -12,3 +12,4 @@ In conclusion (for now) I'll keep this the way this IS until it no longer makes 
 
 ---
 
+What's better than this, I'm DOING it baby yeah that's right. In any case, lol, I NOW have to reduce the amount of Attiniy. I also need to NOT activate the skill if we can't afford it. I think I  can do that in the AchikComponent.
