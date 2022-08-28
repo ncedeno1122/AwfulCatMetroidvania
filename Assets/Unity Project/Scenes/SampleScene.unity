@@ -12057,6 +12057,7 @@ GameObject:
   - component: {fileID: 6163553445257701985}
   - component: {fileID: 6163553445257701986}
   - component: {fileID: 6163553445257701987}
+  - component: {fileID: 6163553445257701990}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -13282,5 +13283,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttiniyComponent: {fileID: 6163553445257701988}
-  BlessComponent: {fileID: 6163553445257701987}
   AchikSpiritFormComponent: {fileID: 6163553445257701986}
+  BlessComponent: {fileID: 6163553445257701987}
+  PrayComponent: {fileID: 6163553445257701990}
+--- !u!114 &6163553445257701990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602695795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4406ae16100b0dd49801f012b38e8451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

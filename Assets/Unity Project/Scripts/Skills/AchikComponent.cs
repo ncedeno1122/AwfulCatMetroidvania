@@ -12,14 +12,16 @@ public class AchikComponent : MonoBehaviour
     public Dictionary<SkillInput, ISkill> SkillDictionary { get; private set; }
 
     public AttiniyComponent AttiniyComponent;
-    public BlessComponent BlessComponent;
     public AchikSpiritFormComponent AchikSpiritFormComponent;
+    public BlessComponent BlessComponent;
+    public PrayComponent PrayComponent;
 
     private void OnValidate()
     {
         if (!AttiniyComponent) AttiniyComponent = GetComponent<AttiniyComponent>();
         if (!BlessComponent) BlessComponent = GetComponent<BlessComponent>();
         if (!AchikSpiritFormComponent) AchikSpiritFormComponent = GetComponent<AchikSpiritFormComponent>();
+        if (!PrayComponent) PrayComponent = GetComponent<PrayComponent>();
     }
 
     private void Awake()
@@ -27,6 +29,7 @@ public class AchikComponent : MonoBehaviour
         if (!AttiniyComponent) AttiniyComponent = GetComponent<AttiniyComponent>();
         if (!BlessComponent) BlessComponent = GetComponent<BlessComponent>();
         if (!AchikSpiritFormComponent) AchikSpiritFormComponent = GetComponent<AchikSpiritFormComponent>();
+        if (!PrayComponent) PrayComponent = GetComponent<PrayComponent>();
     }
 
     private void Start()
@@ -36,7 +39,7 @@ public class AchikComponent : MonoBehaviour
             { new SkillInput(MoveInputDirection.UP, InputActivationType.SINGLETAP, true), BlessComponent },
             { new SkillInput(MoveInputDirection.UP, InputActivationType.HOLD, true), AchikSpiritFormComponent },
             { new SkillInput(MoveInputDirection.UP, InputActivationType.HOLD, false), AchikSpiritFormComponent },
-            //{ new SkillInput(MoveInputDirection.DOWN, InputActivationType.SINGLETAP, true), PrayerComponent },
+            { new SkillInput(MoveInputDirection.DOWN, InputActivationType.HOLD, true), PrayComponent },
             //{ new SkillInput(MoveInputDirection.DOWN, InputActivationType.DOUBLETAP, false), FallingStab },
             //{ new SkillInput(MoveInputDirection.HORIZONTAL, InputActivationType.DOUBLETAP, true), KnifeThrowComponent },
             //{ new SkillInput(MoveInputDirection.HORIZONTAL, InputActivationType.DOUBLETAP, false), KnifeThrowComponent },

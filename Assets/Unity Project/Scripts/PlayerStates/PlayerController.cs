@@ -155,18 +155,24 @@ public class PlayerController : MonoBehaviour
 
     public void OnSkillTap(InputAction.CallbackContext ctx)
     {
+        CurrentState.OnSkill(ctx);
+
         // SingleTap
         if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(InputActivationType.SINGLETAP));
     }
 
     public void OnSkillDoubleTap(InputAction.CallbackContext ctx)
     {
+        CurrentState.OnSkill(ctx);
+
         // DoubleTap
         if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(InputActivationType.DOUBLETAP));
     }
 
     public void OnSkillHold(InputAction.CallbackContext ctx)
     {
+        CurrentState.OnSkill(ctx);
+
         // Hold
         if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(InputActivationType.HOLD));
     }

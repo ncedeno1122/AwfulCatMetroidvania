@@ -36,4 +36,14 @@ public class AttiniyComponent : MonoBehaviour
         // Finally, update new value
         m_CurrAmount = newAmount;
     }
+
+    public void IncreaseAmountBy(float delta)
+    {
+        m_CurrAmount = (m_CurrAmount + delta >= 100f) ? 100f : m_CurrAmount + delta;
+    }
+
+    public void DecreaseAmountBy(float delta)
+    {
+        m_CurrAmount = (m_CurrAmount - delta <= 0f) ? 0f : m_CurrAmount - delta;
+    }
 }
