@@ -20,3 +20,33 @@ Okay, at present, I just got this... Skill State Conditional Transitioning worki
 Is this the best approach? Probably not. Irrespective of that, ***RRAAAAAAAA***, I rock at this sometimes (and not always). I'm glad that's worked out. If I think I need to revisit or cut this in the future, I know I can figure out that too.
 
 I also said I wanted to work on some music today or for now. I'll commit this work for now and then work on some music.
+
+---
+
+## Music Work Today
+I guess I keep forgetting that I can be writing these devlogs about music as well. So, I shall! I was experimenting with a little something for Kowi's theme, and I sort of liked it! I have more work to do in terms of researching a good Mayan/Aztec-ish sound and how to implement that in the soundscape, but I like the melody I had so far.
+
+In terms of music work, I've still been ideating with a few tracks I've actually liked. I'm testing out the waters in terms of how synthy I want the sound when I'm working with both virtual instruments AND recording my own playing. It's been interesting, but I'm getting more to the heart of it now. For the concrete world / Kay Pacha (still speaking in terms of Pachas / realms), I want to have concrete / real instruments MORE than synths. In either surrounding over/underworlds, I could use more synths and things.
+
+That SAID, in a lot of Aztec and Mayan mythology, there are many layers to both the heavens/overworld and the underworlds. Depending on the layers (which works well with a Metroidvania format :D), I could have varying sounds and all that.
+
+The tracks I should focus on most are:
+- A track for the village that Achik comes from (Achpakatambo right now)
+- A track for the temple of the sun in that village (TempleOfSun right now)
+- A track for the first dungeon / area you teleport to in the overworld
+- A track for the Capitol
+
+The main thing about getting the underworld settled with-
+
+#### Merging Cultures with FishingGame
+OOOOH OOH OOH another thing I've been thinking about is STOPPING BEATING AROUND THE BUSH AND ACTUALLY JUST MAKING THIS THE SAME SOCIETIES AS IN MY 3D FISHING GAME. There's not much of a significant difference at this point, they're all cats, and there are two I have in mind taking inspiration from the Inca (Mi'cha) and the Maya (Paal'Ujo).
+So now, Achik is a part of the Mi'cha peoples and Kowi is of the Paal'Ujo. Boom baby.
+Merging the cultures is more than this though, I also get to merge the WILDLIFE of the areas too! That means, in the underworlds that have Hanan Pacha (earthlike) qualities, I can put water and rivers and MOONLIGHT JELLIES like I have from my fishing game!!! ooga booga me like continuity :)
+
+I was to say, anyway, that I should probably get the pantheon of gods and whatever more settled so I can declare what "levels" of the underworld certain gods rule over or whatever, and what other areas there are in there. Especially, though, **what branches / paths connect them all**. That'll come with level design though. 
+
+---
+
+In any case though, oh BOY am I excited to keep working on this game. It just fills me with so much energy when I have cool concepts that come to light and all that. How fun!!
+
+I want to head the the buffet sometime soon because my stomach is grumbling, but if I come back, I want to try and work on the next Skill of my choice. In my list [[Achik#^8ec086]], I might do something like the Prayer / Bless next with a Hold interaction. That way I can finally discern between the two in ACTUALITY.

@@ -45,3 +45,5 @@ Achik should play like a ranged unit who relies on ranged attacks, with a weaker
 | Horizontal | G | Hold | **_Solar Beam_** | Fires a medium-range, sustained beam of Attiniy that hurts enemies and can trigger things (melt?) |
 |  |  |  |  |  |
 
+^8ec086
+
