@@ -33,13 +33,13 @@ Achik should play like a ranged unit who relies on ranged attacks, with a weaker
 #### Skills
 | **Directional Input** | **Grounded? (G/A)** | **InputType** | _SkillName_ | **Description** |
 |---|---|---|---|---|
-| Up | G | Hold | **_Bless_** | Performs a blessing, triggering interactions in BlessListeners.<br>Reflects projectiles? |
-| Up | G | DoubleTap | **_Spirit Form_** | Enters Spirit Form, unrestricted air movement and smaller hitbox for a few seconds. |
-| Up | A | DoubleTap | **_Spirit Form_** | (Same as Above) |
+| Up | G | SingleTap | **_Bless_** | Performs a blessing, triggering interactions in BlessListeners.<br>Reflects projectiles? |
+| Up | G | Hold | **_Spirit Form_** | Enters Spirit Form, unrestricted air movement and smaller hitbox for a few seconds. |
+| Up | A | Hold | **_Spirit Form_** | (Same as Above) |
 | Down | G | Hold | **_Prayer_** | Prays, restoring precious Attiniy. |
-| Down | A | DoubleTap | **_Falling Stab_** | Points the knife downwards and falls quicker. If an enemy is hit, Achik will bounce upwards. |
-| Horizontal / Any | G | DoubleTap + FreeAim | **_Knife Throw / Return_** | Enters a state to throw Achik's priest knife in any direction. If the knife is OUT, it will fly back to Achik. |
-| Horizontal / Any | A | DoubleTap + FreeAim | **_Knife Throw Air / Return_** | Enters a state to throw Achik's priest knife in any direction while airborne. If the knife is OUT, it will fly back to Achik. |
+| Down | A | SingleTap | **_Falling Stab_** | Points the knife downwards and falls quicker. If an enemy is hit, Achik will bounce upwards. |
+| Horizontal / Any | G | Hold + FreeAim | **_Knife Throw / Return_** | Enters a state to throw Achik's priest knife in any direction. If the knife is OUT, it will fly back to Achik. |
+| Horizontal / Any | A | Hold + FreeAim | **_Knife Throw Air / Return_** | Enters a state to throw Achik's priest knife in any direction while airborne. If the knife is OUT, it will fly back to Achik. |
 | Horizontal / Any | G | SingleTap + FreeAim | **_Energy Ball_** | Fires a blast of solar energy using Attiniy. |
 | Horizontal / Any | A  | SingleTap + FreeAim | **_Energy Ball Aerial_** | Fires a blast of solar energy using Attiniy in the air. |
 | Horizontal | G | Hold | **_Solar Beam_** | Fires a medium-range, sustained beam of Attiniy that hurts enemies and can trigger things (melt?) |
