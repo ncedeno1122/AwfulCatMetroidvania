@@ -4,36 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Describes the input for a Skill to be activated!
+/// Acts as a TypeObject for a PlayerController, with data and properties
+/// that make it for Achik.
 /// </summary>
-public struct SkillInput
-{
-    public MoveInputDirection direction;
-    public InputActivationType activationType;
-    public bool isGrounded;
-
-    public SkillInput(MoveInputDirection direction, InputActivationType activationType, bool isGrounded)
-    {
-        this.direction = direction;
-        this.activationType = activationType;
-        this.isGrounded = isGrounded;
-    }
-
-    public override bool Equals(object obj)
-    {
-        if (obj == null || obj.GetType() != this.GetType()) return false;
-        SkillInput objInput = (SkillInput) obj;
-        return this.direction == objInput.direction &&
-               this.activationType == objInput.activationType &&
-               this.isGrounded == objInput.isGrounded;
-    }
-
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
-}
-
 public class AchikComponent : MonoBehaviour
 {
     public Dictionary<SkillInput, ISkill> SkillDictionary { get; private set; }
@@ -61,8 +34,8 @@ public class AchikComponent : MonoBehaviour
         SkillDictionary = new()
         {
             { new SkillInput(MoveInputDirection.UP, InputActivationType.SINGLETAP, true), BlessComponent },
-            { new SkillInput(MoveInputDirection.UP, InputActivationType.DOUBLETAP, true), AchikSpiritFormComponent },
-            { new SkillInput(MoveInputDirection.UP, InputActivationType.DOUBLETAP, false), AchikSpiritFormComponent },
+            { new SkillInput(MoveInputDirection.UP, InputActivationType.HOLD, true), AchikSpiritFormComponent },
+            { new SkillInput(MoveInputDirection.UP, InputActivationType.HOLD, false), AchikSpiritFormComponent },
             //{ new SkillInput(MoveInputDirection.DOWN, InputActivationType.SINGLETAP, true), PrayerComponent },
             //{ new SkillInput(MoveInputDirection.DOWN, InputActivationType.DOUBLETAP, false), FallingStab },
             //{ new SkillInput(MoveInputDirection.HORIZONTAL, InputActivationType.DOUBLETAP, true), KnifeThrowComponent },

@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
     public InputAction SkillAction { get => m_SkillAction; }
     private InputAction m_SkillActionDoubleTap;
     public InputAction SkillActionDoubleTap { get => m_SkillActionDoubleTap; }
+    private InputAction m_SkillActionHold;
+    public InputAction SkillActionHold { get => m_SkillActionHold; }
 
     private Rigidbody2D m_rb2d;
     public Rigidbody2D Rb2d { get => m_rb2d; }
@@ -86,6 +88,7 @@ public class PlayerController : MonoBehaviour
         m_InteractAction = m_PlayerInput.actions["Interact"];
         m_SkillAction = m_PlayerInput.actions["Skill"];
         m_SkillActionDoubleTap = m_PlayerInput.actions["SkillDoubleTap"];
+        m_SkillActionHold = m_PlayerInput.actions["SkillHold"];
 
         m_rb2d = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
@@ -93,9 +96,6 @@ public class PlayerController : MonoBehaviour
         AchikComponent = GetComponent<AchikComponent>(); // TODO: Make interface type OR abstract superclass
 
         CurrentState = new AchikAirState(this);
-
-        // Multitap
-        m_SkillActionDoubleTap.performed += act => AchikComponent.HandleInput(CreateSkillInput(true));
     }
 
     private void FixedUpdate()
@@ -156,16 +156,19 @@ public class PlayerController : MonoBehaviour
     public void OnSkillTap(InputAction.CallbackContext ctx)
     {
         // SingleTap
-        if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(false));
-
-        // Invoke OnSkill or Skill-specific functions in each state.
-        //CurrentState.OnSkill(ctx);
+        if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(InputActivationType.SINGLETAP));
     }
 
     public void OnSkillDoubleTap(InputAction.CallbackContext ctx)
     {
         // DoubleTap
-        if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(true));
+        if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(InputActivationType.DOUBLETAP));
+    }
+
+    public void OnSkillHold(InputAction.CallbackContext ctx)
+    {
+        // Hold
+        if (ctx.performed) AchikComponent.HandleInput(CreateSkillInput(InputActivationType.HOLD));
     }
 
     // + + + + | Functions | + + + + 
@@ -231,10 +234,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private SkillInput CreateSkillInput(bool isDoubleTap)
+    private SkillInput CreateSkillInput(InputActivationType inputActivationType)
     {
-        if (isDoubleTap) return new SkillInput(FindInputDirection(MovementInput), InputActivationType.DOUBLETAP, IsGrounded);
-        else return new SkillInput(FindInputDirection(MovementInput), InputActivationType.SINGLETAP, IsGrounded);
+        return new SkillInput(FindInputDirection(MovementInput), inputActivationType, IsGrounded);
     }
 
     // + + + + | Collision Handling | + + + + 

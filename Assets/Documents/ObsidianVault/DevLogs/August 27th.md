@@ -50,3 +50,16 @@ I was to say, anyway, that I should probably get the pantheon of gods and whatev
 In any case though, oh BOY am I excited to keep working on this game. It just fills me with so much energy when I have cool concepts that come to light and all that. How fun!!
 
 I want to head the the buffet sometime soon because my stomach is grumbling, but if I come back, I want to try and work on the next Skill of my choice. In my list [[Achik#^8ec086]], I might do something like the Prayer / Bless next with a Hold interaction. That way I can finally discern between the two in ACTUALITY.
+
+---
+
+It's post-buffet at 1am time and I just wanted to do one more teeny little adjustment. I wanted to change the Spirit Form Ability to Up - HOLD interaction. I'm also doing this on my laptop and not my desktop. Either way, it shouldn't be terrible. There's a think here though. I need to modify the ActivationType enum to add a HOLD thing, and then create the proper SkillInput when that input occurs. I need to make a dynamic callback context function for that, and FINALLY edit the dictionary in AchikComponent, about in that order. How fun.
+
+OK, just implemented that but there's a bit of a new bug with that.
+
+FIRST THINGS FIRST, I think I'll just try to go with SingleTaps and Holds until I figure out how to read Multitap inputs properly without activating the SingleTap inputaction first.
+
+In any case, about that bug - when I activate Spirit Form from a grounded state, I don't switch to the spirit form sprite. In fact, I still end up running the run animation when I perform horizontal movement.
+It seems like an animator thing because everything else is still working fine state-wise and component-wise.
+
+AAAND fixed it. I'll have to revisit the Animation for Achik again sometime, that's for sure. For now though, mission accomplished. I can now go to bed after yet another wonderful day of fun development and problem solving. :)
