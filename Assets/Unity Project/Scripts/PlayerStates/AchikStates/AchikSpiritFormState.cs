@@ -33,6 +33,10 @@ public class AchikSpiritFormState : SkillState
 
             m_Context.AchikComponent.AttiniyComponent.DecreaseAmountBy(10f * Time.fixedDeltaTime, false);
         }
+        else
+        {
+            this.skillComponent.DeactivateSkill();
+        }
     }
 
     //

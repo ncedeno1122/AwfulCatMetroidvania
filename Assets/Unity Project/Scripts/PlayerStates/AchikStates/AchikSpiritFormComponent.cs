@@ -44,6 +44,7 @@ public class AchikSpiritFormComponent : MonoBehaviour, ISkill, IResourceSkill<fl
 
     public void ActivateSkill()
     {
+        if (!HasEnoughResource(m_PlayerController.AchikComponent.AttiniyComponent.CurrAmount)) return;
         if (!m_PlayerController.TryChangeState(new AchikSpiritFormState(m_PlayerController, SpiritFormSpeed, this))) return;
 
         Debug.Log("Activating Spirit Form!");
@@ -69,6 +70,9 @@ public class AchikSpiritFormComponent : MonoBehaviour, ISkill, IResourceSkill<fl
     public void DeactivateSkill()
     {
         Debug.Log("Deactivating Spirit Form!");
+
+        // End Coroutines
+        this.StopAllCoroutines();
         
         // Animator
         m_Animator.SetBool("SpiritFormActive", false);
@@ -97,7 +101,7 @@ public class AchikSpiritFormComponent : MonoBehaviour, ISkill, IResourceSkill<fl
 
     public bool HasEnoughResource(float userResourceAmount)
     {
-        return userResourceAmount <= SkillCost;
+        return userResourceAmount >= SkillCost;
     }
 
     private IEnumerator SkillDurationCRT(float duration)

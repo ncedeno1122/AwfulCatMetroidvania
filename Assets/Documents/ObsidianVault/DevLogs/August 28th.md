@@ -12,4 +12,13 @@ In conclusion (for now) I'll keep this the way this IS until it no longer makes 
 
 ---
 
-What's better than this, I'm DOING it baby yeah that's right. In any case, lol, I NOW have to reduce the amount of Attiniy. I also need to NOT activate the skill if we can't afford it. I think I  can do that in the AchikComponent.
+What's better than this, I'm DOING it baby yeah that's right. In any case, lol, I NOW have to reduce the amount of Attiniy. I also need to NOT activate the skill if we can't afford it. I think I can do that in the AchikComponent.
+
+I think by definition my component scripts are doing what they're supposed to in terms of the component objects. I was a little afraid at first that I had strayed from their definitions but they DO allow me to extend the functionality of a PlayerController or character type object *by allowing them to access different states*. That's cool I think, they're still doing what they need to which is pretty alright.
+
+There's some unwanted behavior that I've been tackling within the SpiritForm Component. Mostly in the fact that if I want to END early or we run out of Attiniy to use magic with, then I wasn't stopping the coroutines and we'd have overlapping coroutines happening. THIS is typically why I'd encapsulate and try to manage just one IEnumerator variable and check IT and all that, but because I've avoided that this time I need to make sure to stop them always.
+
+What's more, I need to NOT start the thing actually and enter the state and all that if it can't be activated Attiniy-wise.
+
+BOOM and I just worked that one out. Man, I'm glad this is all working out! What's more, I keep on debating about interfaces versus abstract classes... For the IResourceSkill interface, I only use it with floats for the generics. What's more, for the HasEnoughResource method, it's duplication. I think for that REASON I could justify making it an abstract class or something like that. We'll see after some dinner.
+

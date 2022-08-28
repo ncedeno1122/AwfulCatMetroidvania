@@ -60,6 +60,7 @@ public class BlessComponent : MonoBehaviour, ISkill, IResourceSkill<float>
 
     public void ActivateSkill()
     {
+        if (!HasEnoughResource(m_PlayerController.AchikComponent.AttiniyComponent.CurrAmount)) return;
         if (!m_PlayerController.TryChangeState(new AchikBlessState(m_PlayerController, this))) return;
 
         // Reduce Attiniy
@@ -100,6 +101,6 @@ public class BlessComponent : MonoBehaviour, ISkill, IResourceSkill<float>
 
     public bool HasEnoughResource(float userResourceAmount)
     {
-        return m_PlayerController.AchikComponent.AttiniyComponent.CurrAmount > userResourceAmount; // TODO: Function may be better served virtually in abstract class...
+        return userResourceAmount >= SkillCost; // TODO: Function may be better served virtually in abstract class...
     }
 }
