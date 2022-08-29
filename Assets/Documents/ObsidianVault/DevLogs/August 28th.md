@@ -22,3 +22,6 @@ What's more, I need to NOT start the thing actually and enter the state and all 
 
 BOOM and I just worked that one out. Man, I'm glad this is all working out! What's more, I keep on debating about interfaces versus abstract classes... For the IResourceSkill interface, I only use it with floats for the generics. What's more, for the HasEnoughResource method, it's duplication. I think for that REASON I could justify making it an abstract class or something like that. We'll see after some dinner.
 
+---
+
+ALSO there's this annoying bug I need to fix with the movement when grounded. Basically you maintain velocity if you hold up or down when you shouldn't (you slide all over).

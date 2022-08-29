@@ -34,7 +34,7 @@ public class AchikGroundState : PlayerState
         {
             // Move
             var velocityXValue = m_rb2d.velocity.x + (m_Context.MovementInput.x * m_Context.MOVE_SPEED * Time.fixedDeltaTime);
-            if (m_Context.MovementInput != Vector2.zero)
+            if (m_Context.MovementInput.x != 0)
             {
                 m_rb2d.velocity = new Vector2(Mathf.Clamp(velocityXValue, -m_Context.MOVE_SPEED / 3f, m_Context.MOVE_SPEED / 3f), m_rb2d.velocity.y);
             }
