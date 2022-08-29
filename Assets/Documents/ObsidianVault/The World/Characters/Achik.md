@@ -43,7 +43,7 @@ Achik should play like a ranged unit who relies on ranged attacks, with a weaker
 | Horizontal / Any | G | SingleTap + FreeAim | **_Energy Ball_** | Fires a blast of solar energy using Attiniy. |
 | Horizontal / Any | A  | SingleTap + FreeAim | **_Energy Ball Aerial_** | Fires a blast of solar energy using Attiniy in the air. |
 | Horizontal | G | Hold | **_Solar Beam_** | Fires a medium-range, sustained beam of Attiniy that hurts enemies and can trigger things (melt?) |
-|  |  |  |  |  |
+| Neutral | G | SingleTap | ***Attiniy Attack Toggle*** | Toggles whether the knife or Energy Balls are fired as basic attacks. |
 
 ^8ec086
 

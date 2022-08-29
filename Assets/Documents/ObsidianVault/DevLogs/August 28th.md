@@ -25,3 +25,21 @@ BOOM and I just worked that one out. Man, I'm glad this is all working out! What
 ---
 
 ALSO there's this annoying bug I need to fix with the movement when grounded. Basically you maintain velocity if you hold up or down when you shouldn't (you slide all over).
+
+BAM baby so at least there, more done today. That rocks! I guess Mission Accomplished with what I'd said at the beginning. I made the Prayer one easily, the reduction of Attiniy for ResourceSkills, and made it so that you can't Activate() ResourceSkills with insuffient resource. (Though I do think I could pull that up somehow as an abstract class...)
+
+Will I work more today? It's still a bit early...
+
+I GOTTA BE HONEST I'm really interested in potentially making the aiming system for the knife throwing thing, OR just generally getting the EnergyBall skill implemented. The main thing is just aiming, I'm not exactly sure how I want to aim it...
+
+I just have to think about (again) how I want to actuate the Energy Ball input versus the Knife. If the Knife was actuated horizontally, that'd be cool maybe. But perhaps some aiming mode is better...
+
+Unless I was just to map them as Achik's basic attacks... but I want to use the knife optionally as well! Here's what we do. I'll make a Passive ability that can be activated or deactivated that will dictate whether Basic Attacks are EnergyBall shots OR knife attacks. How's THAT?
+
+What's more, I can make this the Grounded Neutral and possibly Aerial Neutral Skill. I'll call it Attiniy Basic Attacks On / Off. I don't know honestly what a clever name to call it might be until later. Or just Attiniy Attacks Toggle?
+
+Okay, I've just updated the Skill sheet in [[Achik]]. Now to actually get the code for this.
+
+---
+
+I'll save that for later though, hooking all that up. For now, I must rest and get ready for my first week of school!
