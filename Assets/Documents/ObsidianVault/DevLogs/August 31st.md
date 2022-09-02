@@ -1,0 +1,5 @@
+Continuing from [[August 28th]]. I had school this week, and tomorrow I'm going to meet with a club and go get some yummy eats from a food truck! I just can't forget to make coffee, I was yawning all during class today even if it was enjoyable.
+
+I am thinking about lore today. I wanted to design more characters and things like that, but I decided that it might be best to ACTUALLY cement the lore of my world and things like that. I wanted to do a sort of top-level outline that will describe the INTENDED progression of my world, potentially. I worry that it might somehow stifle the nonlinearity of the map... Then again, perhaps not if I'm not very specific.
+
+The first main thing would be solidifying areas and places with my game. I might start with the different peoples of the world / cultures and all that before. Or should I start with the land they inhabit, hrmmm...
