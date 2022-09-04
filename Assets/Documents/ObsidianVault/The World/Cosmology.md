@@ -31,5 +31,5 @@ Magic can be allocated and imbued when things are created, and released upon the
 >
 >It sounds all naive but we should just try to be good to one another.
 >
->I establish more of this initially in [[September 1st-2nd]], but I should update this section if any of it changes.
+>I establish more of this initially in [[September 1st]], but I should update this section if any of it changes.
 

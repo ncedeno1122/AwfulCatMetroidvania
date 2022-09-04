@@ -4,25 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "033316d26308f878",
+        "id": "cf5405f1605d5c8e",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DevLogs/September 1st-2nd.md",
-            "mode": "source",
-            "backlinks": false,
-            "source": false
-          }
-        }
-      },
-      {
-        "id": "5bcdb6955e5a92c6",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "The World/Cosmology.md",
+            "file": "The World/Amaura (The World).md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -67,8 +54,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 237.5036334991455,
-    "collapsed": true
+    "width": 237.5036334991455
   },
   "right": {
     "id": "987ac15e94876a6b",
@@ -84,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/September 1st-2nd.md",
+                "file": "The World/Amaura (The World).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DevLogs/September 1st-2nd.md"
+                "file": "The World/Amaura (The World).md"
               }
             }
           }
@@ -112,12 +98,12 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "033316d26308f878",
+  "active": "cf5405f1605d5c8e",
   "lastOpenFiles": [
     "The World/Cosmology.md",
-    "DevLogs/September 1st-2nd.md",
-    "DevLogs/August 31st.md",
+    "DevLogs/September 3rd.md",
     "The World/Characters/Achik.md",
+    "DevLogs/September 1st.md",
     "DevLogs/August 28th.md",
     "DevLogs/August 26th.md",
     "DevLogs/August 25th.md",
