@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "The World/Amaura (The World).md",
+            "file": "The World/Cultures/Paal'Ujo.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The World/Amaura (The World).md",
+                "file": "The World/Cultures/Paal'Ujo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The World/Amaura (The World).md"
+                "file": "The World/Cultures/Paal'Ujo.md"
               }
             }
           }
@@ -100,15 +100,15 @@
   },
   "active": "cf5405f1605d5c8e",
   "lastOpenFiles": [
+    "The World/Cultures/Mi'cha.md",
+    "The World/Cultures/Ilhui.md",
+    "The World/Cultures/Yamu.md",
+    "The World/Cultures/Paal'Ujo.md",
+    "The World/Amaura (The World).md",
     "The World/Cosmology.md",
     "DevLogs/September 3rd.md",
     "The World/Characters/Achik.md",
     "DevLogs/September 1st.md",
-    "DevLogs/August 28th.md",
-    "DevLogs/August 26th.md",
-    "DevLogs/August 25th.md",
-    "DevLogs/August 27th.md",
-    "DevLogs/August 6th.md",
-    "DevLogs/July 15th.md"
+    "DevLogs/August 28th.md"
   ]
 }
