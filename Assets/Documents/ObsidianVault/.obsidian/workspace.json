@@ -1,0 +1,123 @@
+{
+  "main": {
+    "id": "6defa603256b488c",
+    "type": "split",
+    "children": [
+      {
+        "id": "332df04343477f8d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cf5405f1605d5c8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes - Study/Studying Gameplay - Lookin' at Loops.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "dee19fc87d3552b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "2b252586fecf618e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ba61c653d609a5b0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byCreatedTime"
+              }
+            }
+          },
+          {
+            "id": "08b66d90558d484e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 242.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "987ac15e94876a6b",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea824eca8455343b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bd464f04be2375fc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Notes - Study/Studying Gameplay - Lookin' at Loops.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5eb68adbc0b4be2f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Notes - Study/Studying Gameplay - Lookin' at Loops.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "cf5405f1605d5c8e",
+  "lastOpenFiles": [
+    "Notes - Study/References.md",
+    "Notes - Study/Studying Gameplay - Lookin' at Loops.md",
+    "Notes - Study/Citations & Resources.md",
+    "Notes - Study/Ideas for Quests and Hints.md",
+    "Notes - Study/Ideas for Gameplay.md",
+    "The World/Cultures/Paal'Ujo.md",
+    "The World/Cultures/Mi'cha.md",
+    "The World/Cultures/Ilhui.md",
+    "The World/Cultures/Yamu.md",
+    "The World/Amaura (The World).md"
+  ]
+}
