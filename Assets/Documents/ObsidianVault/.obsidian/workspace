@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "The World/Cultures/Paal'Ujo.md",
+            "file": "Notes - Study/Studying Gameplay - Lookin' at Loops.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -54,7 +54,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 237.5036334991455
+    "width": 242.5,
+    "collapsed": true
   },
   "right": {
     "id": "987ac15e94876a6b",
@@ -70,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The World/Cultures/Paal'Ujo.md",
+                "file": "Notes - Study/Studying Gameplay - Lookin' at Loops.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +88,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The World/Cultures/Paal'Ujo.md"
+                "file": "Notes - Study/Studying Gameplay - Lookin' at Loops.md"
               }
             }
           }
@@ -100,15 +101,15 @@
   },
   "active": "cf5405f1605d5c8e",
   "lastOpenFiles": [
+    "Notes - Study/References.md",
+    "Notes - Study/Studying Gameplay - Lookin' at Loops.md",
+    "Notes - Study/Citations & Resources.md",
+    "Notes - Study/Ideas for Quests and Hints.md",
+    "Notes - Study/Ideas for Gameplay.md",
+    "The World/Cultures/Paal'Ujo.md",
     "The World/Cultures/Mi'cha.md",
     "The World/Cultures/Ilhui.md",
     "The World/Cultures/Yamu.md",
-    "The World/Cultures/Paal'Ujo.md",
-    "The World/Amaura (The World).md",
-    "The World/Cosmology.md",
-    "DevLogs/September 3rd.md",
-    "The World/Characters/Achik.md",
-    "DevLogs/September 1st.md",
-    "DevLogs/August 28th.md"
+    "The World/Amaura (The World).md"
   ]
 }
