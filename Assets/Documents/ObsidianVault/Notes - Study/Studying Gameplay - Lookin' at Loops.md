@@ -8,6 +8,8 @@ A[Explore] --> B[Find Powerup/Epiphany]
 B --> A
 ```
 
+^114fdd
+
 It seems from some field research that it is this cycle of exploration and powerup discovery that leads to some meaningful progression. However, implementing this in a nonlinear fashion poses some initially-daunting problems. Some of the key Metroidvania titles have bosses in them, but I must study how they fit in - I'm trying to avoid the feeling of superimposing bosses in certain places that feels almost superficial or inorganic.
 
 One of the terms I've been observing in my short study is the idea of "organic" obstacles. They say that when a powerup/epiphany occurs and the player character is upgraded, they should be able to overcome "organic" obstacles that previously blocked them. I think of the morph ball in Metroid, where an "organic" obstacle was the little 1-block high passage that Samus couldn't yet traverse.
