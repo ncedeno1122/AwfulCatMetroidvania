@@ -40,6 +40,9 @@ public class AchikAirState : PlayerState
         {
             m_rb2d.velocity = new Vector2(Mathf.Clamp(velocityXValue, -m_Context.MOVE_SPEED / 5f, m_Context.MOVE_SPEED / 5f), m_rb2d.velocity.y);
         }
+
+        // Terminal Velocity
+        m_rb2d.velocity = new Vector2(m_rb2d.velocity.x, Mathf.Clamp(m_rb2d.velocity.y, PlayerController.TERMINAL_VELOCITY, float.PositiveInfinity));
     }
 
     //

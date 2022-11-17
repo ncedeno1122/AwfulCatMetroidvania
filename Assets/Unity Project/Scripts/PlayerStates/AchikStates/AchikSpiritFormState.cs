@@ -23,6 +23,7 @@ public class AchikSpiritFormState : SkillState
     {
         Debug.Log("Exiting AchikSpiritFormState!");
         m_rb2d.gravityScale = 1f;
+        m_rb2d.velocity = Vector2.zero;
     }
 
     public override void OnFixedUpdate()

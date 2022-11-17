@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float GROUNDED_DRAG_FORCE = 2f;
     public float GROUNDED_CHECK_WIDTH = 0.15f;
     public const float MOVEINPUT_THRESHOLD = 0.01f;
+    public const float TERMINAL_VELOCITY = -10f;
 
     [SerializeField]
     private bool m_IsGrounded = true;
